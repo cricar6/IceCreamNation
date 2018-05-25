@@ -1,0 +1,38 @@
+$mont : 'Montserrat', sans-serif;
+$pink : #FFAFB1;
+$green: #B7DB66;
+$blue: #3FCECA;
+$gray: #B6B8B8;
+$black: #000000;
+
+.slider {
+
+    width: 100%;
+    background: $blue;
+}
+.main-carousel {
+    background: #FFF;
+}
+.carousel-cell {
+    width: 100%; /* full width */
+    height: 100%; /* height of carousel */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        text-transform: uppercase;
+        color: $black;
+        font-family: $mont;
+        font-size: 3em;
+        font-weight: 800;
+        background: $blue;
+        border: 15px solid $black;
+        padding: 20px;
+    }
+}
+
+.characteristics {
+    height: 100vh;
+}

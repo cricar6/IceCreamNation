@@ -1,0 +1,33 @@
+.slider {
+  height: 100vh;
+  width: 100%;
+  background: #3FCECA;
+}
+
+.main-carousel {
+  background: #FFF;
+}
+
+.carousel-cell {
+  width: 100%;
+  /* full width */
+  height: 100%;
+  /* height of carousel */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-cell h1 {
+  text-transform: uppercase;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3em;
+  font-weight: 800;
+  background: #3FCECA;
+  border: 15px solid #000000;
+  padding: 20px;
+}
+/*# sourceMappingURL=main.css.map */

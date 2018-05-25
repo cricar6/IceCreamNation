@@ -1,0 +1,213 @@
+$mont : 'Montserrat', sans-serif;
+$pink : #FFAFB1;
+$green: #B7DB66;
+$blue: #3FCECA;
+$gray: #B6B8B8;
+$black: #000000;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+#openH {
+    opacity: 0;
+
+}
+#closeH {
+    opacity: 0;
+
+
+} 
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("../imgs/backgrounds/fondoChispastrans.png") ;
+    background-color: white;
+   //overflow-y: hidden;
+
+   
+   .nav {
+    z-index: 2;
+
+       opacity: 1;
+        width: 100%;
+        
+        position: fixed;
+        bottom: 0; 
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        ul {
+            width: 100%;
+            max-width: 1500px;
+            margin: 10px 20px 10px 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            img {
+                display: none;
+            }
+            li {
+                list-style-type: none;
+                
+                a {
+                    text-decoration: none;
+                    font-family: $mont;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    color: $black;
+                    transition: all .2s ease-in;
+     
+                    &:hover {
+
+                        //transform: scale(2);
+                        color: $pink;
+                       
+                    } 
+                }
+            }
+        }
+    }
+
+    .superiorBar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px;
+        .credentials {
+            .credential {
+                a {
+                    
+                    text-decoration: none;
+                    font-family: $mont;
+                    font-weight: 800;
+                    color:$black;
+                    text-transform: uppercase;
+                }
+
+                #register {
+                    background: white;
+                    border: 4px solid $black;
+                    padding: 10px;
+                    margin-left: 10px;
+                    transition:  .2s all ease-in-out;
+
+                    &:hover {
+                        
+                        background: $pink;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .logoContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        .logo {
+            width: 60%;
+            max-width: 600px;
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 670px) {
+
+    
+    header {
+        .hamburguer {
+            z-index: 1;
+            opacity: 1;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            
+            margin: 30px 20px 20px 30px ;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            cursor: pointer;
+            transition: all .5s ease-out;
+
+            &:hover {
+                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+            }
+
+            #openH {
+                opacity: 1;
+                width: 100%;
+                height: 100%;
+                padding: 13px;
+                position: absolute;
+                box-sizing: border-box;
+            }
+            #closeH {
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                padding: 13px;
+                position: absolute;
+                box-sizing: border-box;
+            }
+        }
+        
+        .nav {
+            width: 240px;
+            position: fixed;
+            top: 0; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            
+            opacity: 0;
+            ul {
+                width: 250px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                img {
+                    display: block;
+                    margin: 20px auto;                    
+                }
+                li {
+                    margin: 0 0 10px 0;
+                    width: 200px;
+                    
+                    a {
+                        border-bottom: 1px $black solid; 
+                        transition: all .2s ease-out;
+
+                        &:hover {
+                            background: pink;
+                            color:white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+        
+        
+}

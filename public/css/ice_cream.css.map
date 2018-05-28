@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAC;EACR,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,GAAG;CAElB",
+    "sources": [
+        "ice_cream.scss"
+    ],
+    "names": [],
+    "file": "ice_cream.css"
+}

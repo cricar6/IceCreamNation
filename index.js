@@ -15,4 +15,9 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/tu_helado', (req, res) => {
+    res.render('ice_cream');
+});
+
+
 app.listen(3000);

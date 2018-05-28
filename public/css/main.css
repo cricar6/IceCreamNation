@@ -1,5 +1,4 @@
 .slider {
-  height: 100vh;
   width: 100%;
   background: #3FCECA;
 }
@@ -15,6 +14,7 @@
   /* height of carousel */
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,12 +22,57 @@
 
 .carousel-cell h1 {
   text-transform: uppercase;
-  color: #000000;
+  color: #22222C;
   font-family: "Montserrat", sans-serif;
   font-size: 3em;
   font-weight: 800;
   background: #3FCECA;
-  border: 15px solid #000000;
+  border: 15px solid #22222C;
   padding: 20px;
+}
+
+.characteristics {
+  padding: 9vh 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("../imgs/backgrounds/fondoChispastrans.png");
+}
+
+.characteristics h2 {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.characteristics .characteristicContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.characteristics .characteristic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 200px;
+  cursor: pointer;
+}
+
+.characteristics .characteristic span {
+  width: 100px;
+  height: 3em;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #22222C;
+  vertical-align: center;
 }
 /*# sourceMappingURL=main.css.map */

@@ -82,3 +82,13 @@
 .st13 {
     font-size: 77.8433px;
 }
+
+.stI0 {
+    fill: #FFFFFF;
+    stroke: #000000;
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+

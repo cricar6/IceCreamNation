@@ -1,6 +1,58 @@
+$mont : 'Montserrat', sans-serif;
+$pink : #FFAFB1;
+$green: #B7DB66;
+$blue: #3FCECA;
+$gray: #B6B8B8;
+$black: #22222C;
+
+
+
 .contentApp {
     width: 100%;
     height: 100vh;
-    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    .charging {
+        //margin-top: -150px;
+        position: relative;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        animation: rotatingDotContainer 2s infinite linear; 
 
+        .dot {
+            width: 60%;
+            height: 60%;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            background-color: $pink;
+            border-radius: 100px;
+            animation: sizingDots 2s infinite ease-in-out; 
+
+        }
+        .chargingDot2 {
+            background-color: $blue;
+            top: auto;
+            bottom: 0;
+            animation-delay: -1s; 
+
+        }
+    }
 }
+
+@keyframes rotatingDotContainer {
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg); } }
+  
+  @keyframes sizingDots {
+    0%, 100% {
+      -webkit-transform: scale(0);
+              transform: scale(0); }
+    50% {
+      -webkit-transform: scale(1);
+              transform: scale(1); } }
+   

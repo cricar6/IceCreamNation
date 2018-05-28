@@ -1,6 +1,53 @@
 .contentApp {
   width: 100%;
   height: 100vh;
-  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+.contentApp .charging {
+  position: relative;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  animation: rotatingDotContainer 2s infinite linear;
+}
+
+.contentApp .charging .dot {
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  background-color: #FFAFB1;
+  border-radius: 100px;
+  animation: sizingDots 2s infinite ease-in-out;
+}
+
+.contentApp .charging .chargingDot2 {
+  background-color: #3FCECA;
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
+@keyframes rotatingDotContainer {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sizingDots {
+  0%, 100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 /*# sourceMappingURL=ice_cream.css.map */

@@ -38,6 +38,8 @@
   align-items: center;
   justify-content: center;
   background: url("../imgs/backgrounds/fondoChispastrans.png");
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 .characteristics h2 {
@@ -47,6 +49,7 @@
   text-transform: uppercase;
   text-align: center;
   padding: 10px 0;
+  margin-bottom: 20vh;
 }
 
 .characteristics .characteristicContainer {

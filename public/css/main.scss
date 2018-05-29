@@ -41,7 +41,8 @@ $black: #22222C;
     align-items: center;
     justify-content: center;
     background: url("../imgs/backgrounds/fondoChispastrans.png") ;
-    
+    height: 100vh;
+    box-sizing: border-box;
     h2 {
         font-family: $mont;
         letter-spacing: 10px;
@@ -49,6 +50,7 @@ $black: #22222C;
         text-transform: uppercase;
         text-align: center;
         padding: 10px 0;
+        margin-bottom: 20vh;
     }
     .characteristicContainer {
         display: flex;

@@ -4,6 +4,27 @@ closeH = document.getElementById("closeH");
 navigator = document.getElementById("navegador");
 
 
+var y = window.matchMedia("(min-width: 671px)");
+myFunction(y); // Call listener function at run time
+y.addListener(myFunction2); // Attach listener function on state changes
+
+function myFunction2(y) {
+  if (x.matches) {
+    hamburger.style.display = "none";
+
+  }else {
+    hamburger.style.display = "block";
+
+  }
+};
+w = window;
+if (w.innerWidth>=671) {
+  hamburger.style.display = "none";
+
+} else {
+  hamburger.style.display = "block";
+
+}
 
 
 var open = false;

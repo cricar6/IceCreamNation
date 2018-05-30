@@ -1,12 +1,11 @@
-$mont : 'Montserrat', sans-serif;
-$pink : #FFAFB1;
+$mont: 'Montserrat',
+sans-serif;
+$pink: #FFAFB1;
 $green: #B7DB66;
 $blue: #3FCECA;
 $gray: #B6B8B8;
+$softViolet: #B9B7FF;
 $black: #22222C;
-
-
-
 .contentApp {
     width: 100%;
     height: 100vh;
@@ -20,8 +19,7 @@ $black: #22222C;
         text-align: center;
         width: 100px;
         height: 100px;
-        animation: rotatingDotContainer 2s infinite linear; 
-
+        animation: rotatingDotContainer 2s infinite linear;
         .dot {
             width: 60%;
             height: 60%;
@@ -30,29 +28,109 @@ $black: #22222C;
             top: 0;
             background-color: $pink;
             border-radius: 100px;
-            animation: sizingDots 2s infinite ease-in-out; 
-
+            animation: sizingDots 2s infinite ease-in-out;
         }
         .chargingDot2 {
             background-color: $blue;
             top: auto;
             bottom: 0;
-            animation-delay: -1s; 
-
+            animation-delay: -1s;
         }
     }
 }
 
+
+.titleComposition {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .titles {
+        .subTitleIce {
+
+            width: 100%;
+            color: $softViolet;
+            text-transform: uppercase;
+            font-family: $mont;
+            font-weight: 500;
+            font-size: 40px;
+        }
+        .titleIce {
+
+            width: 100%;
+            color: $black;
+            text-transform: uppercase;
+            font-family: $mont;
+            font-weight: 900;
+            font-style: oblique;
+            text-align: right;
+            font-size: 100px;
+            line-height: 50px;
+        }    
+        #thirdTitle {
+            width: 100%;
+            text-align: right;
+        }
+    }
+    .imageTitle {
+        cursor: pointer;
+        margin-left: -20px;
+        width: 200px;
+        z-index: 1;
+    }
+
+}
+
+
 @keyframes rotatingDotContainer {
     100% {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg); } }
-  
-  @keyframes sizingDots {
-    0%, 100% {
-      -webkit-transform: scale(0);
-              transform: scale(0); }
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sizingDots {
+    0%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
     50% {
-      -webkit-transform: scale(1);
-              transform: scale(1); } }
-   
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+
+
+@media screen and (max-width: 670px) {
+
+    .titleComposition {
+
+        flex-direction: column;
+
+        .titles {
+            .subTitleIce {
+
+
+                font-size: 20px;
+            }
+            .titleIce {
+
+
+                font-size: 50px;
+                line-height: 25px;
+            }    
+            #thirdTitle {
+                width: 100%;
+
+            }
+        }
+        .imageTitle {
+
+            margin-top: 20px;
+            width: 60%;
+        }
+    
+    }
+}

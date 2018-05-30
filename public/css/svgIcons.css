@@ -4,6 +4,7 @@
     stroke-width: 8;
     transition: ease-in .5s all;
 }
+
 .svgIcon {
     width: 50px;
     height: 70px;
@@ -70,7 +71,6 @@
 .iconF5 {
     transition: ease-in .5s all;
     fill: #22222C;
-
 }
 
 .iconF6 {
@@ -147,14 +147,11 @@
     fill: #EAE27E;
 }
 
-
-
 #icecreamIcon3 {
     transition: ease-in .5s all;
 }
 
 .st30 {
-    
     transition: ease-in .5s all;
     fill: white;
     stroke: #22222C;
@@ -188,7 +185,6 @@
     stroke-linejoin: round;
     stroke-miterlimit: 10;
 }
-
 
 #icecreamIcon4 {
     transition: ease-in .5s all;
@@ -263,4 +259,78 @@
 .st410 {
     transition: ease-in .5s all;
     fill: #CBCBFA;
+}
+
+
+
+.stT0 {
+    opacity: 0.18;
+    fill: #070308;
+}
+
+.stT1 {
+    fill: #D6AE5E;
+}
+
+.stT2 {
+    fill: #22222B;
+}
+
+.stT3 {
+    fill: #CF9A41;
+}
+
+.stT4 {
+    opacity: 0.34;
+}
+
+.stT5 {
+    fill: #E5E5E4;
+}
+
+.stT6 {
+    opacity: 0.34;
+    fill: #E5E5E4;
+}
+
+.stT7 {
+    clip-path: url(#SVGID_2_);
+}
+
+.stT8 {
+    fill: none;
+    stroke: #DAC29A;
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+}
+
+.stT9 {
+    fill: #BC3240;
+}
+
+.stT10 {
+    opacity: 0.19;
+}
+
+.stT11 {
+    opacity: .3;
+    fill: #FFFFFF;
+}
+
+.stT12 {
+    fill: #E8E8E7;
+}
+
+.stT13 {
+    fill: #352E3C;
+}
+
+.stT14 {
+    opacity: 0.21;
+    fill: #A9A9A8;
+}
+
+.stT15 {
+    clip-path: url(#SVGID_4_);
 }

@@ -1,0 +1,44 @@
+{
+    "ice_creams":[ {
+        "title": "Nice Blueberry",
+        "firstDescription":"Eres tan dulce como tu sabor, eres muy bueno socialmente y te gusta compartir con ellos.",
+        "secondDescription" : "Muy frecuentemente sientes que tienes que estar socialmente conectado con todos a tu alrededor. Siempre estás preparado para salir con tus amigos.",
+        "thirdDescription":"En general tienes una personalidad divertida y amigable."
+    },
+    {
+        "title" : "Kisser Chocolate",
+        "firstDescription":"¡Eres el alma de la fiesta! encantador, entusiasta, teatral, extrovertido, coqueto, innovador y artístico.",
+        "secondDescription":"Es probable que todo el tiempo fácilmente te sientas tentado a hacer cosas distintas, porque a menudo te aburres de a rutina.",
+        "thirdDescription":"En general eres muy alegre y amas tu vida de la manera en la que es.  Tienes un aura viva, tiendes a ser el centro de atracción y a mantener a la multitud animada."
+    },
+    {
+        "title" : "Cautelous Mint",
+        "firstDescription":"Eres muy calmado y sensible, te disgustan los conflictos, pero eres un maestro de los duelos verbales. Además eres muy bueno manejando el estrés.",
+        "secondDescription":"Encuentras una inmensa alegría en tener éxito, pero a veces eres demasiado exceptico con tu misma vida y terminas complicandote muy fácilmente.",
+        "thirdDescription":"En general eres muy bueno con las palabras y con una gran parte de las situaciones de tu vida, pero eres muy inseguro de ti mismo. ¡Arriesgate a creer en tí!"
+    },
+    {
+        "title" : "Smart Pistachio",
+        "firstDescription":"Eres una persona inteligente, atractiva y muchas personas te aman por tu gran sentido del humor. Buscas distinguite de los demás, y te enorgullece ser distintivo y exclusivo.",
+        "secondDescription":"Eres muy individualista y directo, también muy intolerante para ciertas cosas de la vida.",
+        "thirdDescription":"En general eres muy divertido e inteligente pero individualista y perfeccionista. Deberías relajarte un poco y hacer algo espontáneo y totalmente imprevisto. ¡Te sorprenderías!"
+    },
+    {
+        "title" : "Happy Bubblegum",
+        "firstDescription":"Eres una persona super dulce y alegre, amas pasar tiempo con tus amigos, pero tampoco te molesta conocer gente nueva, tu armas el ambiente.",
+        "secondDescription":"Eres un niño de corazón, pero esto te puede hacer parecer un poco ingenuo e infantil a veces. Pero eso solo hace que las personas te amen más.",
+        "thirdDescription":"Sueles hacer de tus emociones algo obvio en lugar de esconderlas, pero eres de las personas más agradables del mundo."
+    },
+    {
+        "title" : "Loyal Orange",
+        "firstDescription":"Eres muy sincero y empático, y esto le permite a las personas a tu alrededor cómodas consigo mismas.",
+        "secondDescription":"Normalmente tienes dificultades para decir que no,  y esto te hace estresarte mucho porque te dejas cargar demasiado ayudando a otros a tu alrededor.",
+        "thirdDescription":"En general eres muy leal a tus amigos y nunca rompes tus promesas,  además eres una persona con la que las otras disfrutan estresar, pero sueles tener dificultades con las cargas de otros. No siempre es bueno decir que si. ¡Anímate a pensar más en tí!"
+    },
+    {
+        "title" : "Chill Vainilla",
+        "firstDescription":"Eres una persona que ama lo clásico, tienes una personalidad muy tranquila, por esto te suelen llamar el pacifista.",
+        "secondDescription":"Fácilmente sueles adaptarte y estar muy bien con otros tipos de persona. Eso te hace una persona muy empática y cool.",
+        "thirdDescription":"En general te gustan las cosas simples y sensicllas y que las cosas vayan de acuerdo al plan. Pero eso no te hace aburrido. ¡Eres agradable justo como eres!"
+    }
+]}

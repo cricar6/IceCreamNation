@@ -20,4 +20,26 @@ app.get('/tu_helado', (req, res) => {
 });
 
 
+app.get('/tu_helado/blueberry', (req, res) => {
+    res.render('ice_cream_selected');
+});
+app.get('/tu_helado/mint', (req, res) => {
+    res.render('ice_cream_selected');
+});
+app.get('/tu_helado/bubblegum', (req, res) => {
+    res.render('ice_cream_selected');
+});
+app.get('/tu_helado/vainilla', (req, res) => {
+    res.render('ice_cream_selected');
+});
+app.get('/tu_helado/chocolate', (req, res) => {
+    res.render('ice_cream_selected');
+});
+app.get('/tu_helado/pistachio', (req, res) => {
+    res.render('ice_cream_selected');
+});
+app.get('/tu_helado/orange', (req, res) => {
+    res.render('ice_cream_selected');
+});
+
 app.listen(3000);

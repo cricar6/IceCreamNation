@@ -1,5 +1,9 @@
-icecreamIcon1 {}
-
+.icon1Container2 {
+    fill: #D3D3D3;
+    stroke: #22222C;
+    stroke-width: 8;
+    transition: ease-in .5s all;
+}
 .svgIcon {
     width: 50px;
     height: 70px;
@@ -55,7 +59,7 @@ icecreamIcon1 {}
 
 .iconF4 {
     transition: ease-in .5s all;
-    fill: white;
+    fill: #D3D3D3;
     stroke: #22222C;
     stroke-width: 8;
     stroke-linecap: round;
@@ -66,6 +70,7 @@ icecreamIcon1 {}
 .iconF5 {
     transition: ease-in .5s all;
     fill: #22222C;
+
 }
 
 .iconF6 {

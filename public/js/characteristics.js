@@ -12,6 +12,7 @@ var icon1Container = document.getElementById('icon1Container');
 var icon1CoverIce = document.getElementById('icon1CoverIce');
 var porfaFunciona = document.getElementById("porfaFunciona");
 
+
 var icon1Icon = document.querySelector(".svgIcon");
 
 var creamIcon2 = document.getElementById("creamIcon2");

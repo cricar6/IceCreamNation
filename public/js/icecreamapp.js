@@ -129,16 +129,47 @@ function postChargueCompleted() {
       answer1.addEventListener("click", function () {
         question4Result = 1;
         questionCount++;
+        var iceCreamSelected = arrayIceCreamsSelected[0].getAttribute("class");
+        
+        if (iceCreamSelected == "blueberry") window.location.href = "/tu_helado/blueberry";
+        if (iceCreamSelected == "mint") window.location.href = "/tu_helado/mint";
+        if (iceCreamSelected == "bubblegum") window.location.href = "/tu_helado/bubblegum";
+        if (iceCreamSelected == "vainilla") window.location.href= "/tu_helado/vainilla";
+        if (iceCreamSelected == "chocolate") window.location.href = "/tu_helado/chocolate";
+        if (iceCreamSelected == "pistachio") window.location.href ="/tu_helado/pistachio";
+        if (iceCreamSelected == "orange") window.location.href = "/tu_helado/orange";
+        
+
+
       });
       answer2.addEventListener("click", function () {
         question4Result = 2;
         questionCount++;
-
+        var iceCreamSelected = arrayIceCreamsSelected[0].getAttribute("class");
+        
+        if (iceCreamSelected == "blueberry") window.location.href = "/tu_helado/blueberry";
+        if (iceCreamSelected == "mint") window.location.href = "/tu_helado/mint";
+        if (iceCreamSelected == "bubblegum") window.location.href = "/tu_helado/bubblegum";
+        if (iceCreamSelected == "vainilla") window.location.href= "/tu_helado/vainilla";
+        if (iceCreamSelected == "chocolate") window.location.href = "/tu_helado/chocolate";
+        if (iceCreamSelected == "pistachio") window.location.href ="/tu_helado/pistachio";
+        if (iceCreamSelected == "orange") window.location.href = "/tu_helado/orange";
+        
       });
       answer3.addEventListener("click", function () {
         question4Result = 3;
         questionCount++;
 
+        var iceCreamSelected = arrayIceCreamsSelected[0].getAttribute("class");
+        
+        if (iceCreamSelected == "blueberry") window.location.href = "/tu_helado/blueberry";
+        if (iceCreamSelected == "mint") window.location.href = "/tu_helado/mint";
+        if (iceCreamSelected == "bubblegum") window.location.href = "/tu_helado/bubblegum";
+        if (iceCreamSelected == "vainilla") window.location.href= "/tu_helado/vainilla";
+        if (iceCreamSelected == "chocolate") window.location.href = "/tu_helado/chocolate";
+        if (iceCreamSelected == "pistachio") window.location.href ="/tu_helado/pistachio";
+        if (iceCreamSelected == "orange") window.location.href = "/tu_helado/orange";
+        
       });
 
     }
@@ -194,28 +225,49 @@ function postChargueCompleted() {
       orange++;
     }
 
-    alert(Math.max(blueberry, chocolate, mint, pistachio, bubblegum, orange, vainilla));
-    var arrayIceCreams = [blueberry, chocolate, mint, pistachio, bubblegum, orange, vainilla ]
-    
-    /**
-     * 
-     * 
-     * 
-     * 
-     * 
-     * VOY
-     * AQUI
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     */
+    var blueberryClass = document.querySelector('.blueberry');
+    var mintClass = document.querySelector('.mint');
+    var blubblegumClass = document.querySelector('.bubblegum');
+    var vainillaClass = document.querySelector('.vainilla');
+    var chocolateClass = document.querySelector('.chocolate');
+    var pistachioClass = document.querySelector('.pistachio');
+    var orangeClass = document.querySelector('.orange');
+
+    blueberryClass.setAttribute("valor", blueberry);
+    mintClass.setAttribute("valor", mint);
+    blubblegumClass.setAttribute("valor", bubblegum);
+    vainillaClass.setAttribute("valor", vainilla);
+    chocolateClass.setAttribute("valor", chocolate);
+    pistachioClass.setAttribute("valor", pistachio);
+    orangeClass.setAttribute("valor", orange);
+
+    maxNumberIceCreams = Math.max(blueberry, chocolate, mint, pistachio, bubblegum, orange, vainilla);
+
+    var arrayIceCreamsSelected = document.querySelectorAll('[valor="' + maxNumberIceCreams + '"]');
+
   });
 
 
 }
+
+
+function start() {
+
+  var stTitle = document.createElement('div');
+  cqContainer.className = "questionContainer"
+  contentApp.appendChild(cqContainer);
+
+  var startTimeline= anime.timeline();
+  startTimeline
+  .add({
+
+  })
+  .add({
+
+  })
+}
+
+
 
 function chargueCompleted() {
   //alert("gi");
@@ -233,6 +285,8 @@ function chargueCompleted() {
     });
 
 }
+
+//
 setTimeout(chargueCompleted, 3000);
 
 

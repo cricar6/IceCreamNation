@@ -5,37 +5,123 @@ var completeCharguedTime = false;
 
 function postChargueCompleted() {
 
+
+  //MAS ADELANTE SE DICE QUE SE CAMBIARAN LAS VARIABLES; ESTO ES DESPUES DE QUE TERMINA LA ENTRADA
   function changeVariables(position) {
-    question.innerHTML = questions[position].questionTitle;
+
+    qLetters.innerHTML = questions[position].questionTitle;
+    $(document).ready(function () {
+      $(".letters").lettering();
+    });
+
 
     var answerArray = questions[position].answers;
+
     for (var e in answerArray) {
       var newAnswer = document.createElement('div');
       newAnswer.className = "answer";
       newAnswer.id = "answer" + [answerArray.indexOf(answerArray[e]) + 1];
-      newAnswer.innerHTML = answerArray[e];
-      answerContainer.appendChild(newAnswer);
+      cqAnswers.appendChild(newAnswer);
+      newAnswer.style.opacity = "0";
+      var cardView = document.createElement('div');
+      cardView.className = "answerCard";
+      newAnswer.appendChild(cardView);
+      var cardTitle = document.createElement('span');
+      cardTitle.innerHTML = answerArray[e];
+      newAnswer.appendChild(cardTitle);
+      cardTitle.style.opacity = "0";
+
     }
+    document.querySelectorAll('.letter').forEach(function (e) {
+      e.style.opacity = "0";
+    })
+
+    var titleTimeline = anime.timeline();
+    titleTimeline
+      .add({
+        targets: '.letter',
+        opacity: 0,
+        duration: 100
+      })
+      .add({
+        targets: '.titleName .letter,.letters',
+        translateY: ["1.1em", 0],
+        opacity: 1,
+        translateZ: 0,
+        duration: 750,
+        delay: function (el, i) {
+          return 50 * i;
+        },
+        complete: function (animate) {
+          answersEnter();
+          //console.log("i");
+        }
+      });
+
+    function answersEnter() {
+      var answersTimeline = anime.timeline();
+
+      answersTimeline
+        .add({
+          targets: '.answer',
+          translateX: "-200vh",
+          opacity: 0,
+          duration: 50
+
+        })
+        .add({
+          targets: '.answer span',
+          opacity: 0,
+          duration: 50
+        })
+        .add({
+          targets: '.answer',
+          opacity: 1,
+          translateX: 0
+        }).add({
+          targets: '.answer span',
+          opacity: 1,
+          duration: 400
+        })
+
+    };
+
   }
+
+
+
+
 
   contentApp.innerHTML = "";
 
-  var cqContainer = document.createElement('div');
-  cqContainer.className = "questionContainer"
-  contentApp.appendChild(cqContainer);
+  var cqTest = document.createElement('div');
+  cqTest.className = "test"
+  contentApp.appendChild(cqTest);
 
-  var qTitle = document.createElement('h1');
-  qTitle.className = "question";
-  cqContainer.appendChild(qTitle);
+  var qTitle = document.createElement('div');
+  qTitle.className = "titleTest";
+  cqTest.appendChild(qTitle);
 
-  var qAnswers = document.createElement('div');
-  qAnswers.className = "answers";
-  cqContainer.appendChild(qAnswers);
+  var qTitleName = document.createElement('h1');
+  qTitleName.className = "titleName";
+  qTitle.appendChild(qTitleName);
 
-  ;
+  var qTitleNameSpan = document.createElement('span');
+  qTitleNameSpan.className = "text-wrapper";
+  qTitleName.appendChild(qTitleNameSpan);
 
-  var question = document.querySelector(".question");
-  var answerContainer = document.querySelector(".answers");
+  var qLetters = document.createElement('span');
+  qLetters.className = "letters";
+  qTitleNameSpan.appendChild(qLetters);
+
+  var cAnswers = document.createElement('div');
+  cAnswers.className = "answersContainer";
+  cqTest.appendChild(cAnswers);
+
+  var cqAnswers = document.createElement('div');
+  cqAnswers.className = "answers";
+  cAnswers.appendChild(cqAnswers);;
+
 
   var questionCount = 0;
 
@@ -53,28 +139,15 @@ function postChargueCompleted() {
     pistachio = 0,
     orange = 0;
 
-  if (questionCount == 0) {
-    changeVariables(0);
-    var answer1 = document.getElementById("answer1");
-    var answer2 = document.getElementById("answer2");
 
-    answer1.addEventListener("click", function () {
-      question1Result = 1;
-      questionCount++;
-    });
-    answer2.addEventListener("click", function () {
-      question1Result = 2;
-      questionCount++;
 
-    });
-  }
-
-  answerContainer.addEventListener("click", function () {
+  function startAnotherQuestion() {
+    questionCount++;
 
 
     if (questionCount == 1) {
-      while (answerContainer.hasChildNodes()) {
-        answerContainer.removeChild(answerContainer.lastChild);
+      while (cqAnswers.hasChildNodes()) {
+        cqAnswers.removeChild(cqAnswers.lastChild);
       }
       changeVariables(1)
 
@@ -82,97 +155,200 @@ function postChargueCompleted() {
       var answer2 = document.getElementById("answer2");
       var answer3 = document.getElementById("answer3");
 
+
       answer1.addEventListener("click", function () {
-        question2Result = 1;
-        questionCount++;
+        var answersNotSelectedArray = [answer2, answer3];
+        var titleTimeline = anime.timeline();
+      titleTimeline
+        .add({
+          targets: answersNotSelectedArray,
+          translateX: "-130vw",
+        })
+        .add({
+          targets: answer1,
+          translateX: "130vh",
+          complete: function (anim) {
+            question2Result = 1;
+            startTitleEnd();
+          }
+        });
       });
       answer2.addEventListener("click", function () {
-        question2Result = 2;
-        questionCount++;
-
+        var answersNotSelectedArray = [answer1, answer3];
+        var titleTimeline = anime.timeline();
+      titleTimeline
+        .add({
+          targets: answersNotSelectedArray,
+          translateX: "-130vw",
+        })
+        .add({
+          targets: answer2,
+          translateX: "130vh",
+          complete: function (anim) {
+            question2Result = 2;
+            startTitleEnd();
+          }
+        });
       });
-      answer3.addEventListener("click", function () {
-        question2Result = 3;
-        questionCount++;
 
+      answer3.addEventListener("click", function () {
+        var answersNotSelectedArray = [answer2, answer1];
+        var titleTimeline = anime.timeline();
+      titleTimeline
+        .add({
+          targets: answersNotSelectedArray,
+          translateX: "-130vw",
+        })
+        .add({
+          targets: answer3,
+          translateX: "130vh",
+          complete: function (anim) {
+            question2Result = 3;
+            startTitleEnd();
+          }
+        });
       });
     }
     if (questionCount == 2) {
-      while (answerContainer.hasChildNodes()) {
-        answerContainer.removeChild(answerContainer.lastChild);
+      while (cqAnswers.hasChildNodes()) {
+        cqAnswers.removeChild(cqAnswers.lastChild);
       }
       changeVariables(2)
       var answer1 = document.getElementById("answer1");
       var answer2 = document.getElementById("answer2");
 
       answer1.addEventListener("click", function () {
-        question3Result = 1;
-        questionCount++;
+        var answersNotSelectedArray = [answer2];
+        var titleTimeline = anime.timeline();
+        titleTimeline
+          .add({
+            targets: answersNotSelectedArray,
+            translateX: "-130vw",
+          })
+          .add({
+            targets: answer1,
+            translateX: "130vh",
+            complete: function (anim) {
+              question3Result = 1;
+              startTitleEnd();
+            }
+          });
       });
       answer2.addEventListener("click", function () {
-        question3Result = 2;
-        questionCount++;
-
+        var answersNotSelectedArray = [answer1];
+        var titleTimeline = anime.timeline();
+        titleTimeline
+          .add({
+            targets: answersNotSelectedArray,
+            translateX: "-130vw",
+          })
+          .add({
+            targets: answer2,
+            translateX: "130vh",
+            complete: function (anim) {
+              question3Result = 2;
+              startTitleEnd();
+            }
+          });
       });
 
     }
 
     if (questionCount == 3) {
-      while (answerContainer.hasChildNodes()) {
-        answerContainer.removeChild(answerContainer.lastChild);
+      while (cqAnswers.hasChildNodes()) {
+        cqAnswers.removeChild(cqAnswers.lastChild);
       }
-      changeVariables(3)
+      changeVariables(3);
       var answer1 = document.getElementById("answer1");
       var answer2 = document.getElementById("answer2");
       var answer3 = document.getElementById("answer3");
-
-      answer1.addEventListener("click", function () {
-        question4Result = 1;
-        questionCount++;
-        var iceCreamSelected = arrayIceCreamsSelected[0].getAttribute("class");
-        
-        if (iceCreamSelected == "blueberry") window.location.href = "/tu_helado/blueberry";
-        if (iceCreamSelected == "mint") window.location.href = "/tu_helado/mint";
-        if (iceCreamSelected == "bubblegum") window.location.href = "/tu_helado/bubblegum";
-        if (iceCreamSelected == "vainilla") window.location.href= "/tu_helado/vainilla";
-        if (iceCreamSelected == "chocolate") window.location.href = "/tu_helado/chocolate";
-        if (iceCreamSelected == "pistachio") window.location.href ="/tu_helado/pistachio";
-        if (iceCreamSelected == "orange") window.location.href = "/tu_helado/orange";
-        
+  
 
 
-      });
-      answer2.addEventListener("click", function () {
-        question4Result = 2;
-        questionCount++;
-        var iceCreamSelected = arrayIceCreamsSelected[0].getAttribute("class");
-        
-        if (iceCreamSelected == "blueberry") window.location.href = "/tu_helado/blueberry";
-        if (iceCreamSelected == "mint") window.location.href = "/tu_helado/mint";
-        if (iceCreamSelected == "bubblegum") window.location.href = "/tu_helado/bubblegum";
-        if (iceCreamSelected == "vainilla") window.location.href= "/tu_helado/vainilla";
-        if (iceCreamSelected == "chocolate") window.location.href = "/tu_helado/chocolate";
-        if (iceCreamSelected == "pistachio") window.location.href ="/tu_helado/pistachio";
-        if (iceCreamSelected == "orange") window.location.href = "/tu_helado/orange";
-        
-      });
-      answer3.addEventListener("click", function () {
-        question4Result = 3;
-        questionCount++;
+        answer1.addEventListener("click", function () {
+          var answersNotSelectedArray = [answer2, answer3];
+          var titleTimeline = anime.timeline();
+        titleTimeline
+          .add({
+            targets: answersNotSelectedArray,
+            translateX: "-130vw",
+          })
+          .add({
+            targets: answer1,
+            translateX: "130vh",
+            complete: function (anim) {
+              question4Result = 4;
+              alert("terminado");
+              finishTest();
+            }
+          });
+        });
+        answer2.addEventListener("click", function () {
+          var answersNotSelectedArray = [answer1, answer3];
+          var titleTimeline = anime.timeline();
+        titleTimeline
+          .add({
+            targets: answersNotSelectedArray,
+            translateX: "-130vw",
+          })
+          .add({
+            targets: answer2,
+            translateX: "130vh",
+            complete: function (anim) {
+              question4Result = 2;
+              alert("terminado");
+              finishTest();
+            }
+          });
+        });
+  
+        answer3.addEventListener("click", function () {
+          var answersNotSelectedArray = [answer2, answer1];
+          var titleTimeline = anime.timeline();
+        titleTimeline
+          .add({
+            targets: answersNotSelectedArray,
+            translateX: "-130vw",
+          })
+          .add({
+            targets: answer3,
+            translateX: "130vh",
+            complete: function (anim) {
+              question4Result = 3;
+              alert("terminado");
+              finishTest();
+            }
+          });
+        });
 
-        var iceCreamSelected = arrayIceCreamsSelected[0].getAttribute("class");
-        
-        if (iceCreamSelected == "blueberry") window.location.href = "/tu_helado/blueberry";
-        if (iceCreamSelected == "mint") window.location.href = "/tu_helado/mint";
-        if (iceCreamSelected == "bubblegum") window.location.href = "/tu_helado/bubblegum";
-        if (iceCreamSelected == "vainilla") window.location.href= "/tu_helado/vainilla";
-        if (iceCreamSelected == "chocolate") window.location.href = "/tu_helado/chocolate";
-        if (iceCreamSelected == "pistachio") window.location.href ="/tu_helado/pistachio";
-        if (iceCreamSelected == "orange") window.location.href = "/tu_helado/orange";
-        
-      });
+
 
     }
+  }
+
+  function startTitleEnd() {
+    var titleTimeline = anime.timeline();
+    titleTimeline
+      .add({
+        targets: '.titleName .letter,.letters',
+        translateY: ["1.1em", 0],
+        opacity: 0,
+        translateZ: 0,
+        duration: 750,
+
+        delay: function (el, i) {
+          return 50 * i;
+        },
+
+        complete: function (animate) {
+          startAnotherQuestion();
+          console.log("i");
+        }
+      });
+  }
+
+  function finishEndTest() {
+
 
 
     if (question1Result == 1) {
@@ -245,6 +421,91 @@ function postChargueCompleted() {
 
     var arrayIceCreamsSelected = document.querySelectorAll('[valor="' + maxNumberIceCreams + '"]');
 
+
+
+    var iceCreamSelected = arrayIceCreamsSelected[0].getAttribute("class");
+
+    if (iceCreamSelected == "blueberry") window.location.href = "/tu_helado/blueberry";
+    if (iceCreamSelected == "mint") window.location.href = "/tu_helado/mint";
+    if (iceCreamSelected == "bubblegum") window.location.href = "/tu_helado/bubblegum";
+    if (iceCreamSelected == "vainilla") window.location.href = "/tu_helado/vainilla";
+    if (iceCreamSelected == "chocolate") window.location.href = "/tu_helado/chocolate";
+    if (iceCreamSelected == "pistachio") window.location.href = "/tu_helado/pistachio";
+    if (iceCreamSelected == "orange") window.location.href = "/tu_helado/orange";
+
+  };
+  
+  function finishTest() {
+    var titleTimeline = anime.timeline();
+    titleTimeline
+      .add({
+        targets: '.titleName .letter,.letters',
+        translateY: ["1.1em", 0],
+        opacity: 0,
+        translateZ: 0,
+        duration: 750,
+
+        delay: function (el, i) {
+          return 50 * i;
+        },
+
+        complete: function (animate) {
+          finishEndTest();
+          console.log("i");
+        }
+      });
+  }
+
+
+
+  if (questionCount == 0) {
+    changeVariables(0);
+    var answer1 = document.getElementById("answer1");
+    var answer2 = document.getElementById("answer2");
+
+    answer1.addEventListener("click", function () {
+      var answersNotSelectedArray = [answer2];
+      var titleTimeline = anime.timeline();
+      titleTimeline
+        .add({
+          targets: answersNotSelectedArray,
+          translateX: "-130vw",
+        })
+        .add({
+          targets: answer1,
+          translateX: "130vh",
+          complete: function (anim) {
+            question1Result = 1;
+            startTitleEnd();
+          }
+        });
+    });
+
+    answer2.addEventListener("click", function () {
+
+      var answersNotSelectedArray = [answer1];
+      var titleTimeline = anime.timeline();
+      titleTimeline
+        .add({
+          targets: answersNotSelectedArray,
+          translateX: "-130vw",
+        })
+        .add({
+          targets: answer2,
+          translateX: "130vh",
+          complete: function (anim) {
+            question1Result = 2;
+            startTitleEnd();
+          }
+        });
+    });
+  }
+
+
+
+  cqAnswers.addEventListener("click", function () {
+
+
   });
 
 
@@ -261,18 +522,18 @@ function start() {
   var titlsContainer = document.createElement('div');
   titlsContainer.className = "titles"
   composition.appendChild(titlsContainer);
-  
+
   var sbTitle1 = document.createElement('h3');
   sbTitle1.className = "subTitleIce"
   sbTitle1.setAttribute('id', 'firstTitle');
   sbTitle1.innerHTML = "¿Que sabor de";
   titlsContainer.appendChild(sbTitle1);
-  
+
   var titleStart = document.createElement('h1');
   titleStart.className = "titleIce";
   titleStart.innerHTML = "Helado"
   titlsContainer.appendChild(titleStart);
-  
+
   var sbTitle2 = document.createElement('h3');
   sbTitle2.className = "subTitleIce"
   sbTitle2.setAttribute('id', 'thirdTitle');
@@ -282,7 +543,7 @@ function start() {
   var imgTtl = document.createElement('div');
   imgTtl.className = "imageTitle";
   imgTtl.innerHTML = svgIceCream;
-  composition.appendChild (imgTtl);
+  composition.appendChild(imgTtl);
 
   var upper = document.querySelector('.uppest');
   var up = document.querySelector('.up');
@@ -290,9 +551,9 @@ function start() {
   var down = document.querySelector('.down');
 
   //var  = document.querySelector('.uppest,.up,.cone,.down');
-  
+
   upper.style.opacity = 0;
-  up.style.opacity =0;
+  up.style.opacity = 0;
   cone.style.opacity = 0;
   down.style.opacity = 0;
   sbTitle1.style.opacity = 0;
@@ -303,219 +564,214 @@ function start() {
   var startTimeline = anime.timeline();
 
   startTimeline
-  .add({
-    targets: down,
+    .add({
+      targets: down,
       opacity: 0,
       translateY: -500,
       easing: 'easeOutQuad',
       duration: 50
-  })
-  .add({
-    targets: down,
+    })
+    .add({
+      targets: down,
       opacity: .2,
       translateY: 0,
       easing: 'easeOutQuad',
       duration: 400
-  })
-  .add({
-    targets: cone,
+    })
+    .add({
+      targets: cone,
       opacity: 0,
-      translateY : -100,
+      translateY: -100,
       easing: 'easeOutQuad',
       duration: 50
-  })
-  .add({
-    targets: cone,
-    opacity: 1,
-    translateY : 0,
-    easing: 'easeOutQuad',
-    duration: 400
-  })
-  .add({
-    targets: up,
+    })
+    .add({
+      targets: cone,
+      opacity: 1,
+      translateY: 0,
+      easing: 'easeOutQuad',
+      duration: 400
+    })
+    .add({
+      targets: up,
       opacity: 0,
-      translateY : -100,
+      translateY: -100,
       easing: 'easeOutQuad',
       duration: 50
-  })
-  .add({
-    targets: up,
-    opacity: 1,
-    translateY : 0,
-    easing: 'easeOutQuad',
-    duration: 400
-  })
-  .add({
-    targets: upper,
-      opacity: 0,
+    })
+    .add({
+      targets: up,
+      opacity: 1,
+      translateY: 0,
       easing: 'easeOutQuad',
-      duration: 50
-  })
-  .add({
-    targets: upper,
-    opacity: 1,
-    translateY : 0,
-    easing: 'easeOutQuad',
-    duration: 400,
-    complete: function (anim) {
-      floating();
-    }
-  })
-  .add({
-    targets: sbTitle1,
+      duration: 400
+    })
+    .add({
+      targets: upper,
       opacity: 0,
       easing: 'easeOutQuad',
       duration: 50
-  })
-  .add({
-    targets: sbTitle1,
-    opacity: 1,
-    easing: 'easeOutQuad',
-    duration: 400
-  })
-  .add({
-    targets: titleStart,
+    })
+    .add({
+      targets: upper,
+      opacity: 1,
+      translateY: 0,
+      easing: 'easeOutQuad',
+      duration: 400,
+      complete: function (anim) {
+        floating();
+
+      }
+    })
+    .add({
+      targets: sbTitle1,
+      opacity: 0,
+      easing: 'easeOutQuad',
+      duration: 50
+    })
+    .add({
+      targets: sbTitle1,
+      opacity: 1,
+      easing: 'easeOutQuad',
+      duration: 400
+    })
+    .add({
+      targets: titleStart,
       translateX: "-120vw",
-      opacity : 1,
+      opacity: 1,
       easing: 'easeOutQuad',
       duration: 50,
       elasticity: 400
-  })
-  .add({
-    targets: titleStart,
-    translateX: 10,
-    easing: 'easeOutQuad',
-    duration: 400
-  })
-  .add({
-    targets: titleStart,
-    translateX: -10,
-    easing: 'easeInQuad',
-    duration: 200
-  })
-  .add({
-    targets: titleStart,
-    translateX: 0,
-    easing: 'easeOutQuad',
-    duration:200
-  })
-  .add({
-    targets: sbTitle2,
+    })
+    .add({
+      targets: titleStart,
+      translateX: 10,
+      easing: 'easeOutQuad',
+      duration: 400
+    })
+    .add({
+      targets: titleStart,
+      translateX: -10,
+      easing: 'easeInQuad',
+      duration: 200
+    })
+    .add({
+      targets: titleStart,
+      translateX: 0,
+      easing: 'easeOutQuad',
+      duration: 200
+    })
+    .add({
+      targets: sbTitle2,
       opacity: 0,
       easing: 'easeOutQuad',
       duration: 50
-  })
-  .add({
-    targets: sbTitle2,
-    opacity: 1,
-    easing: 'easeOutQuad',
-    duration: 400,
-    complete: function (anim) {
-      postAnimationStart();
-    }
-  });
+    })
+    .add({
+      targets: sbTitle2,
+      opacity: 1,
+      easing: 'easeOutQuad',
+      duration: 400,
+      complete: function (anim) {
+        postAnimationStart();
+      }
+    });
 
   var eye1 = document.getElementsByClassName("stT13")[2];
   var eye2 = document.getElementsByClassName("stT13")[3];
 
   var arrayEyes = [eye1, eye2];
+
   function postAnimationStart() {
-    imgTtl.addEventListener("click", function(){
+    imgTtl.addEventListener("click", function () {
       var startTimeline = anime.timeline();
 
-      startTimeline        
-      .add({
-        targets: sbTitle1,
+      startTimeline
+        .add({
+          targets: sbTitle1,
           opacity: 0,
           easing: 'easeOutQuad',
           duration: 400
-      })
-      
-      .add({
-        targets: titleStart,
+        })
+
+        .add({
+          targets: titleStart,
           translateX: "20",
           easing: 'easeOutQuad',
           duration: 200
 
-      })
-      .add({
-        targets: titleStart,
+        })
+        .add({
+          targets: titleStart,
           translateX: "-120vw",
-          opacity : 1,
+          opacity: 1,
           easing: 'easeOutQuad',
           duration: 400
 
-      })
-      .add({
-        targets: sbTitle2,
+        })
+        .add({
+          targets: sbTitle2,
           opacity: 0,
           easing: 'easeOutQuad',
           duration: 400
-      })
-      
-      .add({
-        targets: arrayEyes,
+        })
+
+        .add({
+          targets: arrayEyes,
           translateX: -20,
           easing: 'easeOutQuad',
           duration: 400
-      })
-      .add({
-        targets: arrayEyes,
+        })
+        .add({
+          targets: arrayEyes,
           translateX: 20,
           easing: 'easeOutQuad',
           duration: 400
-      })
-      .add({
-        targets: arrayEyes,
+        })
+        .add({
+          targets: arrayEyes,
           translateX: 0,
           easing: 'easeOutQuad',
           duration: 400
-      })
-      .add({
-        targets: imgTtl,
-        translateX: -40,          
-        easing: 'easeOutQuad',
-        duration: 400
-      })
-      .add({
-        targets: imgTtl,
-        translateX: "70vw", 
-        opacity: 1,         
-        easing: 'easeOutQuad',
-        duration: 400
-      })
-      .add({
-        targets: imgTtl,
-        translateX: "30vw", 
-        opacity: 1,         
-        easing: 'easeOutQuad',
-        delay: 1000,
-        duration: 400
-      })
-      .add({
-        targets: imgTtl,
-        translateX: "-70vw", 
-        opacity: 1,         
-        easing: 'easeOutQuad',
-        delay:250,
-        duration: 400,
-        complete: function (anim) {
-          postChargueCompleted();
-        }
-      })
+        })
+        .add({
+          targets: imgTtl,
+          translateX: "70vw",
+          opacity: 1,
+          easing: 'easeOutQuad',
+          duration: 400
+        })
+        .add({
+          targets: imgTtl,
+          translateX: "30vw",
+          opacity: 1,
+          easing: 'easeOutQuad',
+          delay: 1000,
+          duration: 400
+        })
+        .add({
+          targets: imgTtl,
+          translateX: "-70vw",
+          opacity: 1,
+          easing: 'easeOutQuad',
+          delay: 250,
+          duration: 400,
+          complete: function (anim) {
+            postChargueCompleted();
+          }
+        })
 
     });
   };
 
-  function floating(){
-    //alert("hi");
-    
+  function floating() {
+
     var alternate = anime({
       targets: cone,
       translateY: -15,
       direction: 'alternate',
       duration: 1000,
-      loop:true
+      loop: true
     });
     anime({
       targets: up,
@@ -523,15 +779,13 @@ function start() {
       direction: 'alternate',
       duration: 1000,
       delay: 500,
-      loop:true
+      loop: true
     });
-  
 
-    
+
+
   }
 }
-
-
 
 function chargueCompleted() {
 
@@ -556,23 +810,23 @@ setTimeout(chargueCompleted, 3000);
 
 
 var questions = [{
-    questionTitle: "Describirías tu personalidad como:",
+    questionTitle: "Describirías&nbsp;tu&nbsp;personalidad&nbsp;como:",
     answers: ["Relajado", "Alégre"]
   },
 
   {
-    questionTitle: "En tu tiempo libre prefieres:",
-    answers: ["Leer un libro", "Salir com amigos", "Ver series"]
+    questionTitle: "En&nbsp;tu&nbsp;tiempo&nbsp;libre&nbsp;prefieres:",
+    answers: ["Leer un libro", "Salir con amigos", "Ver series"]
   },
 
   {
-    questionTitle: "¿Como describirias tu estilo de vida?",
+    questionTitle: "¿Cómo&nbsp;describirias&nbsp;tu&nbsp;estilo&nbsp;de&nbsp;vida?",
     answers: ["Tranquilo", "Energético"]
   },
 
   {
-    questionTitle: "Tu vida social es:",
-    answers: ["De pocos amigos", "Soy el más popular", "Conozco a muchos pero tengo pocos amigos"]
+    questionTitle: "Tu&nbsp;vida&nbsp;&nbsp;social&nbsp;es:",
+    answers: ["De&nbsp;pocos&nbsp;amigos", "Soy&nbsp;el&nbsp;más&nbsp;popular&nbsp;que&nbsp;conozco", "Conozco&nbsp;a&nbsp;muchos&nbsp;pero&nbsp;tengo pocos amigos"]
   },
 ];
 

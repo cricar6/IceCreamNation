@@ -3,7 +3,6 @@ openH = document.getElementById("openH");
 closeH = document.getElementById("closeH");
 navigator = document.getElementById("navegador");
 
-
 var y = window.matchMedia("(min-width: 671px)");
 myFunction(y); // Call listener function at run time
 y.addListener(myFunction2); // Attach listener function on state changes
@@ -29,8 +28,6 @@ if (w.innerWidth>=671) {
 
 var open = false;
 var activable = true;
-
-
 
 function myFunction(x) {
   if (x.matches) { // If media query matches
@@ -85,13 +82,28 @@ function myFunction(x) {
 var x = window.matchMedia("(min-width: 670px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
+var aparece = false;
+if(aparece==false) {
+  document.getElementById('navegador').style.display="none";
+} else {
+  document.getElementById('navegador').style.display="flex";
+}
+
+
 
 hamburger.addEventListener("click", function () {
+  if(aparece==false) {
+    document.getElementById('navegador').style.display="none";
+  } else {
+    document.getElementById('navegador').style.display="flex";
+  }
   if (activable == true) {
     if (open == false) {
       //openH.style.display= "none";
       //closeH.style.display = "block";
+      
       activable = false;
+      aparece=true;
       var meterTimeline = anime.timeline();
 
       meterTimeline
@@ -115,7 +127,14 @@ hamburger.addEventListener("click", function () {
         .add({
           targets: closeH,
           opacity: 1,
-          duration: 1
+          duration: 1,
+          complete: function (anim) {
+            if(aparece==false) {
+              document.getElementById('navegador').style.display="none";
+            } else {
+              document.getElementById('navegador').style.display="flex";
+            }
+          }
         })
         .add({
           targets: '.nav',
@@ -135,12 +154,20 @@ hamburger.addEventListener("click", function () {
           translateY: 0,
           easing: 'easeInOutQuad',
 
-          duration: 500
+          duration: 500,
+          complete: function (anim) {
+            activable = true;
+            if(aparece==false) {
+              document.getElementById('navegador').style.display="none";
+            } else {
+              document.getElementById('navegador').style.display="flex";
+            }
+          }
         })
-      meterTimeline.finished.then(activable = true);
       open = true;
 
     } else {
+
       var meterTimeline = anime.timeline();
       activable = false;
 
@@ -185,10 +212,13 @@ hamburger.addEventListener("click", function () {
           targets: hamburger,
           translateY: 0,
           easing: 'easeInOutQuad',
-          duration: 500
+          duration: 500,
+          complete: function (anim) {
+            activable = true;
+            aparece=false;
+            
+          }
         })
-      meterTimeline.finished.then(activable = true);
-
       open = false;
     }
   }

@@ -829,22 +829,22 @@ setTimeout(chargueCompleted, 3000);
 
 
 var questions = [{
-    questionTitle: "Describirías&nbsp;tu&nbsp;personalidad&nbsp;como:",
+    questionTitle: "Describirías tu personalidad como:",
     answers: ["Relajado", "Alegre"]
   },
 
   {
-    questionTitle: "En&nbsp;tu&nbsp;tiempo&nbsp;libre&nbsp;prefieres:",
+    questionTitle: "En tu tiempo libre prefieres:",
     answers: ["Leer un libro", "Salir con amigos", "Ver series"]
   },
 
   {
-    questionTitle: "¿Cómo&nbsp;describirias&nbsp;tu&nbsp;estilo&nbsp;de&nbsp;vida?",
+    questionTitle: "¿Cómo describirias tu estilo de vida?",
     answers: ["Tranquilo", "Enérgico"]
   },
 
   {
-    questionTitle: "Tu&nbsp;vida&nbsp;&nbsp;social&nbsp;es:",
+    questionTitle: "Tu vida  social es:",
     answers: ["De pocos amigos", "Soy el más popular que conozco", "Conozco a muchos pero tengo pocos amigos"]
   },
 ];

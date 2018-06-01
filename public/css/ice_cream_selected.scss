@@ -37,7 +37,7 @@ body {
             padding: 10px;
         }
         .creamsContainer {
-            transition: .2s all;
+            //transition: .2s all;
             cursor: pointer;
             width: 150px;
             display: flex;
@@ -51,13 +51,13 @@ body {
                 justify-content: center; 
                 //height: 50vh;
                 opacity: 0;
-                transition: .2s all;
+                //transition: .2s all;
             }
             .topItem {
-                transition: .2s all;
+                //transition: .2s all;
                 z-index: 3;
                 .topItemContainer {
-                    transition: .2s all;
+                    //transition: .2s all;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -75,10 +75,10 @@ body {
                 }
             }
             .bottomItem {
-                transition: .2s all;
+                //transition: .2s all;
                 z-index: 1;
                 .bottomItemContainer {
-                    transition: .2s all;
+                    //transition: .2s all;
                     //margin-top: 0px;
                     margin-top: -80px;
                     display: flex;

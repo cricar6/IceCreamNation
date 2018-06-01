@@ -97,7 +97,7 @@ app.get("/tienda", (req, res) => {
 
 app.get("/tienda/cono/:nombre", (req, res) => {
     console.log("hola");
-    db.collection('cono').find({
+    db.collection('products').find({
         Nombre: req.params.nombre
     })
     .toArray((err, result) => {

@@ -151,10 +151,16 @@ function postChargueCompleted() {
       }
       changeVariables(1)
 
+      
       var answer1 = document.getElementById("answer1");
+      document.querySelector("#answer1 .answerCard")
+      .innerHTML = icon1;
       var answer2 = document.getElementById("answer2");
+      document.querySelector("#answer2 .answerCard")
+      .innerHTML = icon2;
       var answer3 = document.getElementById("answer3");
-
+      document.querySelector("#answer3 .answerCard")
+      .innerHTML = icon3;
 
       answer1.addEventListener("click", function () {
         var answersNotSelectedArray = [answer2, answer3];
@@ -215,7 +221,11 @@ function postChargueCompleted() {
       }
       changeVariables(2)
       var answer1 = document.getElementById("answer1");
+      document.querySelector("#answer1 .answerCard")
+      .innerHTML = icon1;
       var answer2 = document.getElementById("answer2");
+      document.querySelector("#answer2 .answerCard")
+      .innerHTML = icon2;
 
       answer1.addEventListener("click", function () {
         var answersNotSelectedArray = [answer2];
@@ -260,10 +270,14 @@ function postChargueCompleted() {
       }
       changeVariables(3);
       var answer1 = document.getElementById("answer1");
+      document.querySelector("#answer1 .answerCard")
+      .innerHTML = icon1;
       var answer2 = document.getElementById("answer2");
+      document.querySelector("#answer2 .answerCard")
+      .innerHTML = icon2;
       var answer3 = document.getElementById("answer3");
-  
-
+      document.querySelector("#answer3 .answerCard")
+      .innerHTML = icon3;
 
         answer1.addEventListener("click", function () {
           var answersNotSelectedArray = [answer2, answer3];
@@ -460,8 +474,13 @@ function postChargueCompleted() {
 
   if (questionCount == 0) {
     changeVariables(0);
+    
     var answer1 = document.getElementById("answer1");
+    document.querySelector("#answer1 .answerCard")
+    .innerHTML = icon1;
     var answer2 = document.getElementById("answer2");
+    document.querySelector("#answer2 .answerCard")
+    .innerHTML = icon2;
 
     answer1.addEventListener("click", function () {
       var answersNotSelectedArray = [answer2];
@@ -829,7 +848,60 @@ var questions = [{
     answers: ["De pocos amigos", "Soy el más popular que conozco", "Conozco a muchos pero tengo pocos amigos"]
   },
 ];
+var icon1 = `
+<svg version="1.1" id="icecreamIcon2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                        y="0px" viewBox="0 0 170 206" style="enable-background:new 0 0 170 206;" xml:space="preserve">
 
+                        <polygon class="st20" id="baseIcon2" points="143.3,197.3 38.7,197.3 31.7,150.9 150.3,150.9 " />
+                        <path class="st21" id="creamIcon2" d="M130.1,101c0,0,16.6-25.2-8.4-42.3c0,0,2.8-27.6-21.3-31.9C76.2,22.4,80.9,10,80.9,10s-25.8,6.8-17.4,35
+	c0,0-29.7,17.1-10.9,50.3c0,0-34.7,14.7-14.7,55.7h14.7h0.6v22.9c0,4,3.3,7.3,7.3,7.3c4,0,7.3-3.3,7.3-7.3V151h77.7
+	C145.5,151,163.4,121.4,130.1,101z" />
+                        <path class="st22" d="M103,59.9c6.3,0.2,12.5-0.3,18.7-1.3" />
+                        <path class="st22" d="M63.5,45c6.8,8.6,17.8,11.6,28.4,13.9" />
+                        <path class="st22" d="M83.6,108.3c15.9,3.4,32.6,1.5,46.4-7.4" />
+                        <path class="st22" d="M52.6,95.2c6.1,4.2,13,7.4,19.9,9.9" />
+                        <polygon class="st23" points="132.5,157.2 125.2,195 139.7,195 145.5,157.2 " />
+                        <g>
+                        </g>
+                    </svg>
+`
+var icon2 = `                    <svg version="1.1" id="icecreamIcon3" x="0px" y="0px" viewBox="0 0 170 206" style="enable-background:new 0 0 170 206;" xml:space="preserve">
+
+<path class="st30" id="iceStickIcon3" d="M97.8,144.6H75.7v47.7c0,6.1,5,11.1,11.1,11.1h0c6.1,0,11.1-5,11.1-11.1V144.6z" />
+<path class="st31" d="M90.8,155.5v34.1c0,0,0,5.4-5.1,7.5c0,0,9.6,1.4,8.6-7.3v-34.3H90.8z" />
+<path class="st32" id="iceCoverIcon3" d="M89.5,5.1h-7c-23.8,0-43.1,19.3-43.1,43.1v107.1h93.2V48.2C132.6,24.4,113.3,5.1,89.5,5.1z"
+/>
+<path class="st33" d="M60.6,52.2c0,0-2.8,11.4,7.9,11.4s7.9-11.4,7.9-11.4" />
+<path class="st33" d="M95.6,85.2c0,0-2.8,11.4,7.9,11.4s7.9-11.4,7.9-11.4" />
+<path class="st33" d="M62.6,111.2c0,0-2.8,11.4,7.9,11.4s7.9-11.4,7.9-11.4" />
+<path class="st31" d="M90.7,8.6c0,0,33.4,13.8,31.5,46.9v97.7h8.9V43.6c0,0-3.1-26.1-27.3-35.8L90.7,8.6z" />
+</svg>
+
+`
+
+var icon3 = `<svg version="1.1" id="iceCreamIcon4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+y="0px" viewBox="0 0 170 206" style="enable-background:new 0 0 170 206;" xml:space="preserve">
+
+<circle class="st40" cx="58.9" cy="37.5" r="1" />
+<circle class="st40" cx="58.9" cy="84.3" r="1" />
+<circle class="st41" cx="46.9" cy="84.3" r="1.8" />
+<circle class="st42" cx="49.6" cy="55.4" r="1.7" />
+<polygon class="st43" id="coneIceCream4" points="87.8,201.6 130,93.5 44.9,93.5 " />
+<line class="st44" x1="76.7" y1="166.9" x2="119.4" y2="120.5" />
+<line class="st44" x1="65" y1="137.1" x2="108.5" y2="93.9" />
+<line class="st44" x1="55" y1="111.9" x2="71.2" y2="95" />
+<line class="st44" x1="98" y1="168.2" x2="59.3" y2="125.6" />
+<line class="st44" x1="109.7" y1="138.8" x2="65" y2="93.9" />
+<polygon class="st45" points="112.4,103.9 85.8,187.1 87.4,191.2 121.5,106.1 " />
+<line class="st44" x1="119.6" y1="113.3" x2="98.8" y2="93.4" />
+<path class="st46" id="coverIceCream4" d="M36.8,66c0,0-3.9-14.6,8.9-24.9c0,0,5.4-30.6,42.2-29.8c36.8,0.8,38.5,30.1,38.5,30.1s16.4,3.9,11.8,26.4
+c0,0,11.6,17.8-6.8,32.6c-10.7,8.3-24.8-3.5-24.8-3.5s-7,12-20.7,11.8s-18-11.8-18-11.8S48.7,109,36.2,93.5C25.9,77,36.8,66,36.8,66
+z" />
+<path class="st44" d="M83.6,28.9c0,0-14.9-1.1-22.1,20.9" />
+<path class="st44" d="M106.6,55.9c0,0,10.9,2.4,10,14.1" />
+</svg>
+
+`
 var svgIceCream = `<svg version="1.1" id="iceCreamTitle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 306.7 791.3" style="enable-background:new 0 0 306.7 751.3;" xml:space="preserve">
 

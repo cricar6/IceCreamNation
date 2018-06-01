@@ -826,7 +826,7 @@ var questions = [{
 
   {
     questionTitle: "Tu&nbsp;vida&nbsp;&nbsp;social&nbsp;es:",
-    answers: ["De&nbsp;pocos&nbsp;amigos", "Soy&nbsp;el&nbsp;más&nbsp;popular&nbsp;que&nbsp;conozco", "Conozco&nbsp;a&nbsp;muchos&nbsp;pero&nbsp;tengo pocos amigos"]
+    answers: ["De pocos amigos", "Soy el más popular que conozco", "Conozco a muchos pero tengo pocos amigos"]
   },
 ];
 

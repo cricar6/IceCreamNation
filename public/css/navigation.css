@@ -20,7 +20,7 @@ header {
 }
 
 header .nav {
-  z-index: 2;
+  z-index: 10;
   opacity: 1;
   width: 100%;
   position: fixed;

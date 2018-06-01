@@ -310,7 +310,7 @@ function postChargueCompleted() {
             translateX: "130vw",
             complete: function (anim) {
               question4Result = 2;
-              alert("terminado");
+              //alert("terminado");
               finishTest();
             }
           });
@@ -329,7 +329,7 @@ function postChargueCompleted() {
             translateX: "130vw",
             complete: function (anim) {
               question4Result = 3;
-              alert("terminado");
+              //alert("terminado");
               finishTest();
             }
           });

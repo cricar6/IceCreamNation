@@ -111,23 +111,11 @@ function contentToDescription() {
     var doIceCreamBigger = anime.timeline();
     doIceCreamBigger
         .add({
-            targets: '.topItem',
+            targets: '.item',
             opacity: 1,
             height: "50vh",
             duration: 250,
 
-        })
-        .add({
-            targets: '.middleItem',
-            opacity: 1,
-            height: "50vh",
-            duration: 250,
-        })
-        .add({
-            targets: '.bottomItem',
-            opacity: 1,
-            height: "50vh",
-            duration: 250,
         })
         .add({
             targets: '.dContainer',

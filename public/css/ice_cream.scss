@@ -149,7 +149,7 @@ $black: #22222C;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                transition: .2s ease all;
+                //transition: .2s ease all;
 
                 .answerCard {
                     border-radius: 15px;
@@ -157,7 +157,7 @@ $black: #22222C;
                     width: 70px;
                     height: 80px;
                     border: 5px solid $black;
-                    transition: .2s ease all;
+                    //transition: .2s ease all;
                     cursor: pointer;
                     
                     &:hover {

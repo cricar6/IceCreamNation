@@ -12,14 +12,19 @@ app.set ('views', './views');
 app.set('view engine', 'hbs');
 
 app.use(express.static('public'));
-
-MongoClient.connect('mongodb://localhost:27017', function (err, client) {
+MongoClient.connect("mongodb+srv://cluster0-wiwgu.mongodb.net/icecreamnation?retryWrites=true",
+{
+    auth: {
+        user: 'cricar',
+        password: 'naitsirc_6569'
+    }
+}, function (err, client) {
     if (err) throw err;
 
     db = client.db('icecreamnation');
 
     // Iniciar servidor
-    app.listen(3000);
+    app.listen(process.env.PORT || 3000);
 });
 
 app.get('/', (req, res) => {

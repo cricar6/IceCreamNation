@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800,900,900i" rel="stylesheet">
 
     <title>{{cream.title}} | Ice Cream Nation</title>
 
     <link rel="shortcut icon" href="/imgs/favicon.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="/css/navigation.css">
     <link rel="stylesheet" href="/css/svgLogo.css">
-    <link rel="stylesheet" href="/css/ice_cream.css">
+    <link rel="stylesheet" href="/css/ice_cream_selected.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </head>
@@ -45,17 +46,59 @@
             </ul>
         </div>
 
-    <div class="contentApp">
-        <h1>{{cream.title}}</h1>
-        <p>{{cream.firstDescription}}</p>
-        <p>{{cream.secondDescription}}</p>
-        <p>{{cream.thirdDescription}}</p>
+        <div class="contentApp">
+            <div class="iceCreamContainer" color="{{cream.direction}}">
+                <div class="titleIce">
+                    <h1>{{cream.title}}</h1>
+                </div>
+                <div class="creamsContainer">
+                    <div class="topItem item">
+                        <div class="topItemContainer">
+                            <div class="top" nameTop="{{cream.direction}}">
+                                <img src="{{cream.top}}" alt="">
 
-        
-    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="middleItem item">
+                        <div class="middleItemContainer">
+                            <div class="middle" nameMid="{{cream.direction}}">
+                                <img src="{{cream.middle}}" alt="">
 
-    <script src="/js/anime.min.js"></script>
-    <script src="/js/main.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottomItem item">
+                        <div class="bottomItemContainer">
+                            <div class="bottom" nameBot="{{cream.direction}}">
+                                <img src="{{cream.bottom}}" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="iceCreamDescription">
+                <div class="titleContainer">
+                    <span>Eres</span>
+                    <h1>{{cream.title}}</h1>
+                </div>
+
+                <!--
+                <p>{{cream.firstDescription}}</p>
+                <p>{{cream.secondDescription}}</p>
+                <p>{{cream.thirdDescription}}</p>
+                -->
+            </div>
+
+
+
+        </div>
+
+        <script src="/js/anime.min.js"></script>
+        <script src="/js/main.js"></script>
 
 </body>
 

@@ -11,7 +11,7 @@ function postChargueCompleted() {
 
     qLetters.innerHTML = questions[position].questionTitle;
     $(document).ready(function () {
-      $(".letters").lettering();
+      $(".letters").lettering('words');
     });
 
 
@@ -64,7 +64,7 @@ function postChargueCompleted() {
       answersTimeline
         .add({
           targets: '.answer',
-          translateX: "-200vh",
+          translateX: "-200vw",
           opacity: 0,
           duration: 50
 
@@ -166,7 +166,7 @@ function postChargueCompleted() {
         })
         .add({
           targets: answer1,
-          translateX: "130vh",
+          translateX: "130vw",
           complete: function (anim) {
             question2Result = 1;
             startTitleEnd();
@@ -183,7 +183,7 @@ function postChargueCompleted() {
         })
         .add({
           targets: answer2,
-          translateX: "130vh",
+          translateX: "130vw",
           complete: function (anim) {
             question2Result = 2;
             startTitleEnd();
@@ -201,7 +201,7 @@ function postChargueCompleted() {
         })
         .add({
           targets: answer3,
-          translateX: "130vh",
+          translateX: "130vw",
           complete: function (anim) {
             question2Result = 3;
             startTitleEnd();
@@ -227,7 +227,7 @@ function postChargueCompleted() {
           })
           .add({
             targets: answer1,
-            translateX: "130vh",
+            translateX: "130vw",
             complete: function (anim) {
               question3Result = 1;
               startTitleEnd();
@@ -244,7 +244,7 @@ function postChargueCompleted() {
           })
           .add({
             targets: answer2,
-            translateX: "130vh",
+            translateX: "130vw",
             complete: function (anim) {
               question3Result = 2;
               startTitleEnd();
@@ -275,7 +275,7 @@ function postChargueCompleted() {
           })
           .add({
             targets: answer1,
-            translateX: "130vh",
+            translateX: "130vw",
             complete: function (anim) {
               question4Result = 4;
               alert("terminado");
@@ -293,7 +293,7 @@ function postChargueCompleted() {
           })
           .add({
             targets: answer2,
-            translateX: "130vh",
+            translateX: "130vw",
             complete: function (anim) {
               question4Result = 2;
               alert("terminado");
@@ -312,7 +312,7 @@ function postChargueCompleted() {
           })
           .add({
             targets: answer3,
-            translateX: "130vh",
+            translateX: "130vw",
             complete: function (anim) {
               question4Result = 3;
               alert("terminado");
@@ -473,7 +473,7 @@ function postChargueCompleted() {
         })
         .add({
           targets: answer1,
-          translateX: "130vh",
+          translateX: "130vw",
           complete: function (anim) {
             question1Result = 1;
             startTitleEnd();
@@ -492,7 +492,7 @@ function postChargueCompleted() {
         })
         .add({
           targets: answer2,
-          translateX: "130vh",
+          translateX: "130vw",
           complete: function (anim) {
             question1Result = 2;
             startTitleEnd();

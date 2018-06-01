@@ -1,0 +1,200 @@
+$mont: 'Montserrat',
+sans-serif;
+$pink: #FFAFB1;
+$green: #B7DB66;
+$blue: #3FCECA;
+$gray: #b6b8b8;
+$black: #22222C;
+* {
+    font-family: $mont;
+    color: $black;
+}
+
+.contentApp {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    .iceCreamContainer {
+        background-image: url(/imgs/backgrounds/backgroundIceCreams.png);
+        background-size: 140px;
+        width: 50%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $blue;
+            color: white;
+            padding: 10px;
+        }
+        .creamsContainer {
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            .item {
+                display: flex;
+                align-items: center;
+                justify-content: center; //height: 100vh;
+            }
+            .topItem {
+                z-index: 3;
+                .topItemContainer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 110px;
+                    .top {}
+                }
+            }
+            .middleItem {
+                z-index: 2;
+                .middleItemContainer {
+                    width: 190px;
+                    .top {}
+                }
+            }
+            .bottomItem {
+                z-index: 1;
+                .bottomItemContainer {
+                    margin-top: -80px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 150px;
+                    .bottom {}
+                }
+            }
+        }
+    }
+    .iceCreamDescription {
+        display: flex;
+        align-items: center;
+        
+        .titleContainer {
+            padding: 20px;
+            
+            span {
+                font-size: 2em;
+                font-weight: 400;
+
+            }
+            h1 {
+                font-size: 3em;
+                font-weight: 900;
+                font-style: oblique;
+                text-transform: uppercase;
+                line-height: 40px;
+            }
+        }
+        width: 50%;
+        background: #fffdeb;
+    }
+}
+
+[color="blueberry"] {
+    background-color: #ADA8CE;
+}
+
+[nameTop="blueberry"] {
+    width: 80px;
+    margin-bottom: -5px;
+}
+
+[color="mint"] {
+    background-color: #4eccc2;
+}
+
+[nameTop="mint"] {
+    width: 70px;
+    margin-bottom: -5px;
+    margin-right: -100px;
+}
+
+[nameBot="mint"] {
+    width: 135px;
+    margin-bottom: -5px;
+}
+
+[nameTop="blueberry"] {
+    width: 80px;
+    margin-bottom: -5px;
+}
+
+[nameBot="blueberry"] {
+    width: 150px;
+    margin-bottom: -5px;
+}
+
+[color="bubblegum"] {
+    background-color: #CE7593;
+}
+
+[nameTop="bubblegum"] {
+    width: 80px;
+    margin-bottom: -30px;
+    margin-left: -85px;
+}
+
+[nameBot="bubblegum"] {
+    width: 150px;
+    margin-bottom: -5px;
+}
+
+[color="vainilla"] {
+    background-color: #EBDBBF;
+}
+
+[nameTop="vainilla"] {
+    width: 110px;
+}
+
+[nameBot="vainilla"] {
+    width: 150px;
+    margin-bottom: -5px;
+}
+
+[color="chocolate"] {
+    background-color: #6B4B2B;
+}
+
+[nameTop="chocolate"] {
+    width: 80px;
+    margin-left: -50px;
+}
+
+[nameBot="chocolate"] {
+    width: 150px;
+    margin-bottom: -5px;
+}
+
+[color="pistachio"] {
+    background-color: #9CBC59;
+}
+
+[nameTop="pistachio"] {
+    width: 110px;
+}
+
+[nameBot="pistachio"] {
+    width: 150px;
+}
+
+[color="orange"] {
+    background-color: #C66D26;
+}
+
+[nameTop="orange"] {
+    width: 80px;
+}
+
+[nameBot="orange"] {
+    width: 150px;
+}

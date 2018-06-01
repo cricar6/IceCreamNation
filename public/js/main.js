@@ -20,6 +20,7 @@ w = window;
 if (w.innerWidth>=671) {
   hamburger.style.display = "none";
 
+
 } else {
   hamburger.style.display = "block";
 
@@ -79,15 +80,26 @@ function myFunction(x) {
   }
 }
 
-var x = window.matchMedia("(min-width: 670px)")
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state changes
-var aparece = false;
+var x = window.matchMedia("(min-width: 670px)");
+myFunction(x)
+x.addListener(myFunction)
+
+//var aparece = false;
+$(window).resize(function() {
+  if(aparece==false) {
+  document.getElementById('navegador').style.display="none";
+} else {
+  document.getElementById('navegador').style.display="flex";
+}
+});
 if(aparece==false) {
   document.getElementById('navegador').style.display="none";
 } else {
   document.getElementById('navegador').style.display="flex";
 }
+
+var aparece= false;
+
 
 
 

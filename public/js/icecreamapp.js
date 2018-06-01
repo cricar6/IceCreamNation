@@ -151,68 +151,116 @@ function postChargueCompleted() {
       }
       changeVariables(1)
 
-      
+
       var answer1 = document.getElementById("answer1");
       document.querySelector("#answer1 .answerCard")
-      .innerHTML = icon1;
+        .innerHTML = icon1;
       var answer2 = document.getElementById("answer2");
       document.querySelector("#answer2 .answerCard")
-      .innerHTML = icon2;
+        .innerHTML = icon2;
       var answer3 = document.getElementById("answer3");
       document.querySelector("#answer3 .answerCard")
-      .innerHTML = icon3;
+        .innerHTML = icon3;
+
+      //Voy a importar código de characteristics.js sobre el coloreo.
+
+
+
+      var creamIcon2 = document.getElementById("creamIcon2");
+      var baseIcon2 = document.getElementById("baseIcon2")
+
+      answer1.addEventListener("mouseover", function () {
+        //alert("funca");
+        creamIcon2.style.fill = "#B7DB66";
+        baseIcon2.style.fill = "#D8D8D8";
+      });
+      answer1.addEventListener("mouseout", function () {
+        creamIcon2.style.fill = "white";
+        baseIcon2.style.fill = "white";
+      });
+
+      var iceStickIcon3 = document.getElementById("iceStickIcon3");
+      var iceCoverIcon3 = document.getElementById("iceCoverIcon3");
+
+      answer2.addEventListener("mouseover", function () {
+        //alert("funca");
+        iceStickIcon3.style.fill = "#DDB25E";
+        iceCoverIcon3.style.fill = "#63AAAA";
+      });
+      answer2.addEventListener("mouseout", function () {
+        iceStickIcon3.style.fill = "white";
+        iceCoverIcon3.style.fill = "white";
+      });
+
+      var coneIceCream4 = document.getElementById("coneIceCream4");
+      var coverIceCream4 = document.getElementById("coverIceCream4");
+
+      answer3.addEventListener("mouseover", function () {
+        //alert("funca");
+
+        coneIceCream4.style.fill = "#DDB25E";
+        coverIceCream4.style.fill = "#FFAB5D";
+      });
+      answer3.addEventListener("mouseout", function () {
+        coneIceCream4.style.fill = "white";
+        coverIceCream4.style.fill = "white";
+      });
+
+      //Termina codigo importado, repetir en otras respuestas
 
       answer1.addEventListener("click", function () {
         var answersNotSelectedArray = [answer2, answer3];
         var titleTimeline = anime.timeline();
-      titleTimeline
-        .add({
-          targets: answersNotSelectedArray,
-          translateX: "-130vw",
-        })
-        .add({
-          targets: answer1,
-          translateX: "130vw",
-          complete: function (anim) {
-            question2Result = 1;
-            startTitleEnd();
-          }
-        });
+        titleTimeline
+          .add({
+            targets: answersNotSelectedArray,
+            translateX: "-130vw",
+          })
+          .add({
+            targets: answer1,
+            translateX: "130vw",
+            complete: function (anim) {
+              question2Result = 1;
+              startTitleEnd();
+            }
+          });
       });
+
+
       answer2.addEventListener("click", function () {
         var answersNotSelectedArray = [answer1, answer3];
         var titleTimeline = anime.timeline();
-      titleTimeline
-        .add({
-          targets: answersNotSelectedArray,
-          translateX: "-130vw",
-        })
-        .add({
-          targets: answer2,
-          translateX: "130vw",
-          complete: function (anim) {
-            question2Result = 2;
-            startTitleEnd();
-          }
-        });
+        titleTimeline
+          .add({
+            targets: answersNotSelectedArray,
+            translateX: "-130vw",
+          })
+          .add({
+            targets: answer2,
+            translateX: "130vw",
+            complete: function (anim) {
+              question2Result = 2;
+              startTitleEnd();
+            }
+          });
       });
 
       answer3.addEventListener("click", function () {
         var answersNotSelectedArray = [answer2, answer1];
         var titleTimeline = anime.timeline();
-      titleTimeline
-        .add({
-          targets: answersNotSelectedArray,
-          translateX: "-130vw",
-        })
-        .add({
-          targets: answer3,
-          translateX: "130vw",
-          complete: function (anim) {
-            question2Result = 3;
-            startTitleEnd();
-          }
-        });
+        titleTimeline
+          .add({
+            targets: answersNotSelectedArray,
+            translateX: "-130vw",
+          })
+          .add({
+            targets: answer3,
+            translateX: "130vw",
+            complete: function (anim) {
+              question2Result = 3;
+              startTitleEnd();
+            }
+          });
       });
     }
     if (questionCount == 2) {
@@ -222,10 +270,44 @@ function postChargueCompleted() {
       changeVariables(2)
       var answer1 = document.getElementById("answer1");
       document.querySelector("#answer1 .answerCard")
-      .innerHTML = icon1;
+        .innerHTML = icon1;
       var answer2 = document.getElementById("answer2");
       document.querySelector("#answer2 .answerCard")
-      .innerHTML = icon2;
+        .innerHTML = icon2;
+
+              //Voy a importar código de characteristics.js sobre el coloreo.
+
+
+
+      var creamIcon2 = document.getElementById("creamIcon2");
+      var baseIcon2 = document.getElementById("baseIcon2")
+
+      answer1.addEventListener("mouseover", function () {
+        //alert("funca");
+        creamIcon2.style.fill = "#B7DB66";
+        baseIcon2.style.fill = "#D8D8D8";
+      });
+      answer1.addEventListener("mouseout", function () {
+        creamIcon2.style.fill = "white";
+        baseIcon2.style.fill = "white";
+      });
+
+      var iceStickIcon3 = document.getElementById("iceStickIcon3");
+      var iceCoverIcon3 = document.getElementById("iceCoverIcon3");
+
+      answer2.addEventListener("mouseover", function () {
+        //alert("funca");
+        iceStickIcon3.style.fill = "#DDB25E";
+        iceCoverIcon3.style.fill = "#63AAAA";
+      });
+      answer2.addEventListener("mouseout", function () {
+        iceStickIcon3.style.fill = "white";
+        iceCoverIcon3.style.fill = "white";
+      });
+
+
+      //Termina codigo importado, repetir en otras respuestas
+
 
       answer1.addEventListener("click", function () {
         var answersNotSelectedArray = [answer2];
@@ -271,17 +353,64 @@ function postChargueCompleted() {
       changeVariables(3);
       var answer1 = document.getElementById("answer1");
       document.querySelector("#answer1 .answerCard")
-      .innerHTML = icon1;
+        .innerHTML = icon1;
       var answer2 = document.getElementById("answer2");
       document.querySelector("#answer2 .answerCard")
-      .innerHTML = icon2;
+        .innerHTML = icon2;
       var answer3 = document.getElementById("answer3");
       document.querySelector("#answer3 .answerCard")
-      .innerHTML = icon3;
+        .innerHTML = icon3;
 
-        answer1.addEventListener("click", function () {
-          var answersNotSelectedArray = [answer2, answer3];
-          var titleTimeline = anime.timeline();
+
+              //Voy a importar código de characteristics.js sobre el coloreo.
+
+
+
+      var creamIcon2 = document.getElementById("creamIcon2");
+      var baseIcon2 = document.getElementById("baseIcon2")
+
+      answer1.addEventListener("mouseover", function () {
+        //alert("funca");
+        creamIcon2.style.fill = "#B7DB66";
+        baseIcon2.style.fill = "#D8D8D8";
+      });
+      answer1.addEventListener("mouseout", function () {
+        creamIcon2.style.fill = "white";
+        baseIcon2.style.fill = "white";
+      });
+
+      var iceStickIcon3 = document.getElementById("iceStickIcon3");
+      var iceCoverIcon3 = document.getElementById("iceCoverIcon3");
+
+      answer2.addEventListener("mouseover", function () {
+        //alert("funca");
+        iceStickIcon3.style.fill = "#DDB25E";
+        iceCoverIcon3.style.fill = "#63AAAA";
+      });
+      answer2.addEventListener("mouseout", function () {
+        iceStickIcon3.style.fill = "white";
+        iceCoverIcon3.style.fill = "white";
+      });
+
+      var coneIceCream4 = document.getElementById("coneIceCream4");
+      var coverIceCream4 = document.getElementById("coverIceCream4");
+
+      answer3.addEventListener("mouseover", function () {
+        //alert("funca");
+
+        coneIceCream4.style.fill = "#DDB25E";
+        coverIceCream4.style.fill = "#FFAB5D";
+      });
+      answer3.addEventListener("mouseout", function () {
+        coneIceCream4.style.fill = "white";
+        coverIceCream4.style.fill = "white";
+      });
+
+      //Termina codigo importado, repetir en otras respuestas
+
+      answer1.addEventListener("click", function () {
+        var answersNotSelectedArray = [answer2, answer3];
+        var titleTimeline = anime.timeline();
         titleTimeline
           .add({
             targets: answersNotSelectedArray,
@@ -296,10 +425,10 @@ function postChargueCompleted() {
               finishTest();
             }
           });
-        });
-        answer2.addEventListener("click", function () {
-          var answersNotSelectedArray = [answer1, answer3];
-          var titleTimeline = anime.timeline();
+      });
+      answer2.addEventListener("click", function () {
+        var answersNotSelectedArray = [answer1, answer3];
+        var titleTimeline = anime.timeline();
         titleTimeline
           .add({
             targets: answersNotSelectedArray,
@@ -314,11 +443,11 @@ function postChargueCompleted() {
               finishTest();
             }
           });
-        });
-  
-        answer3.addEventListener("click", function () {
-          var answersNotSelectedArray = [answer2, answer1];
-          var titleTimeline = anime.timeline();
+      });
+
+      answer3.addEventListener("click", function () {
+        var answersNotSelectedArray = [answer2, answer1];
+        var titleTimeline = anime.timeline();
         titleTimeline
           .add({
             targets: answersNotSelectedArray,
@@ -333,7 +462,7 @@ function postChargueCompleted() {
               finishTest();
             }
           });
-        });
+      });
 
 
 
@@ -448,7 +577,7 @@ function postChargueCompleted() {
     if (iceCreamSelected == "orange") window.location.href = "/tu_helado/orange";
 
   };
-  
+
   function finishTest() {
     var titleTimeline = anime.timeline();
     titleTimeline
@@ -474,13 +603,48 @@ function postChargueCompleted() {
 
   if (questionCount == 0) {
     changeVariables(0);
-    
+
     var answer1 = document.getElementById("answer1");
     document.querySelector("#answer1 .answerCard")
-    .innerHTML = icon1;
+      .innerHTML = icon1;
     var answer2 = document.getElementById("answer2");
     document.querySelector("#answer2 .answerCard")
-    .innerHTML = icon2;
+      .innerHTML = icon2;
+
+            //Voy a importar código de characteristics.js sobre el coloreo.
+
+
+
+            var creamIcon2 = document.getElementById("creamIcon2");
+            var baseIcon2 = document.getElementById("baseIcon2")
+      
+            answer1.addEventListener("mouseover", function () {
+              //alert("funca");
+              creamIcon2.style.fill = "#B7DB66";
+              baseIcon2.style.fill = "#D8D8D8";
+            });
+            answer1.addEventListener("mouseout", function () {
+              creamIcon2.style.fill = "white";
+              baseIcon2.style.fill = "white";
+            });
+      
+            var iceStickIcon3 = document.getElementById("iceStickIcon3");
+            var iceCoverIcon3 = document.getElementById("iceCoverIcon3");
+      
+            answer2.addEventListener("mouseover", function () {
+              //alert("funca");
+              iceStickIcon3.style.fill = "#DDB25E";
+              iceCoverIcon3.style.fill = "#63AAAA";
+            });
+            answer2.addEventListener("mouseout", function () {
+              iceStickIcon3.style.fill = "white";
+              iceCoverIcon3.style.fill = "white";
+            });
+      
+
+      
+            //Termina codigo importado, repetir en otras respuestas
+      
 
     answer1.addEventListener("click", function () {
       var answersNotSelectedArray = [answer2];

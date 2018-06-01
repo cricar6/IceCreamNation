@@ -60,7 +60,7 @@
 
 .iconF4 {
     transition: ease-in .5s all;
-    fill: #D3D3D3;
+    fill: white;
     stroke: #22222C;
     stroke-width: 8;
     stroke-linecap: round;

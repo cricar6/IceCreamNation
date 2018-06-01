@@ -60,3 +60,50 @@ app.get('/tu_helado/:direction', (req, res) => {
             });
         });
 });
+
+
+app.get("/tienda", (req, res) => {
+
+
+
+
+    console.log("hola");
+    var cono = db.collection('products').find();
+    if (req.query.precio) {
+        console.log(req.query.precio);
+        cono.filter({
+            precio: {
+                $gte: parseFloat(req.query.precio[0]),
+                $lte: parseFloat(req.query.precio[1])
+            }
+        });
+    }
+    if (req.query.sabor)
+        cono.filter({
+            sabor: req.query.sabor
+        });
+
+    cono.toArray((err, result) => {
+        console.log(result);
+        res.render('tienda', {
+            cono: result
+        })
+    });
+
+
+
+});
+
+
+app.get("/tienda/cono/:nombre", (req, res) => {
+    console.log("hola");
+    db.collection('cono').find({
+        Nombre: req.params.nombre
+    })
+    .toArray((err, result) => {
+        //console.log(result[0]);
+        res.render('producto', {
+            cono: result[0]
+        });
+    });
+});

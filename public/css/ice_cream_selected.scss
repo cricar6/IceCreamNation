@@ -11,7 +11,7 @@ $black: #22222C;
 }
 body {
     background: #fffdeb;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .contentApp {
     min-height: 100vh;
@@ -37,6 +37,7 @@ body {
             padding: 10px;
         }
         .creamsContainer {
+            transition: .2s all;
             cursor: pointer;
             width: 150px;
             display: flex;
@@ -50,10 +51,13 @@ body {
                 justify-content: center; 
                 //height: 50vh;
                 opacity: 0;
+                transition: .2s all;
             }
             .topItem {
+                transition: .2s all;
                 z-index: 3;
                 .topItemContainer {
+                    transition: .2s all;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -62,15 +66,19 @@ body {
                 }
             }
             .middleItem {
+                transition: .2s all;
                 z-index: 2;
                 .middleItemContainer {
+                    transition: .2s all;
                     width: 190px;
                     .top {}
                 }
             }
             .bottomItem {
+                transition: .2s all;
                 z-index: 1;
                 .bottomItemContainer {
+                    transition: .2s all;
                     //margin-top: 0px;
                     margin-top: -80px;
                     display: flex;
@@ -121,14 +129,35 @@ body {
                     padding: 20px;
                     margin: 20px;
                     max-width: 400px;
+                    opacity: 0;
                 }
             }
 
         }
 
     }
+
+
+
 }
 
+.buttonIniciarAgain button {
+    background: $pink;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    font-size: 20px;
+    border: transparent;
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+.vacio {
+    display: none;
+}
 [color="blueberry"] {
     background-color: #ADA8CE;
 }

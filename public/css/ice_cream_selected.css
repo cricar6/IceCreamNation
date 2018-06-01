@@ -5,7 +5,7 @@
 
 body {
   background: #fffdeb;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .contentApp {
@@ -37,6 +37,7 @@ body {
 }
 
 .contentApp .iceCreamContainer .creamsContainer {
+  transition: .2s all;
   cursor: pointer;
   width: 150px;
   display: flex;
@@ -51,13 +52,16 @@ body {
   align-items: center;
   justify-content: center;
   opacity: 0;
+  transition: .2s all;
 }
 
 .contentApp .iceCreamContainer .creamsContainer .topItem {
+  transition: .2s all;
   z-index: 3;
 }
 
 .contentApp .iceCreamContainer .creamsContainer .topItem .topItemContainer {
+  transition: .2s all;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,18 +69,22 @@ body {
 }
 
 .contentApp .iceCreamContainer .creamsContainer .middleItem {
+  transition: .2s all;
   z-index: 2;
 }
 
 .contentApp .iceCreamContainer .creamsContainer .middleItem .middleItemContainer {
+  transition: .2s all;
   width: 190px;
 }
 
 .contentApp .iceCreamContainer .creamsContainer .bottomItem {
+  transition: .2s all;
   z-index: 1;
 }
 
 .contentApp .iceCreamContainer .creamsContainer .bottomItem .bottomItemContainer {
+  transition: .2s all;
   margin-top: -80px;
   display: flex;
   align-items: center;
@@ -124,6 +132,26 @@ body {
   padding: 20px;
   margin: 20px;
   max-width: 400px;
+  opacity: 0;
+}
+
+.buttonIniciarAgain button {
+  background: #FFAFB1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  font-size: 20px;
+  border: transparent;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.vacio {
+  display: none;
 }
 
 [color="blueberry"] {

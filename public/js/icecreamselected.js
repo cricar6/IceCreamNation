@@ -70,15 +70,20 @@ startInteraction
         translateY: 0,
         duration: 250,
         offset: 3450,
-        complete: function(anim) {
+        complete: function (anim) {
             listenerIce();
         }
     });
 
-function listenerIce () {
+var activable = true;
+
+function listenerIce() {
+    if(activable ==true) {
+
+    
     iceCreamPro.addEventListener('click', function () {
         var startInteraction = anime.timeline();
-    
+
         startInteraction
             .add({
                 targets: '.titleContainer h1',
@@ -86,47 +91,89 @@ function listenerIce () {
                 translateX: "140vw",
                 translateZ: -1,
                 duration: 1000,
-                
+
             })
             .add({
                 targets: '.titleContainer span',
                 opacity: 0,
                 duration: 1000,
-                complete: function(anim) {
+                complete: function (anim) {
                     contentToDescription();
                 }
             });
     });
+}
 };
 
+function contentToDescription() {
+    document.querySelector(".iceCreamDescription")
+        .innerHTML = description;
+    var doIceCreamBigger = anime.timeline();
+    doIceCreamBigger
+        .add({
+            targets: '.topItem',
+            opacity: 1,
+            height: "50vh",
+            duration: 250,
 
-function contentToDescription(){
- document.querySelector(".iceCreamDescription")
- .innerHTML = description;
-
+        })
+        .add({
+            targets: '.middleItem',
+            opacity: 1,
+            height: "50vh",
+            duration: 250,
+        })
+        .add({
+            targets: '.bottomItem',
+            opacity: 1,
+            height: "50vh",
+            duration: 250,
+        })
+        .add({
+            targets: '.dContainer',
+            height: '50vh',
+            duration: 500
+        })
+        .add({
+            targets: '.dContainer p',
+            opacity: 1,
+            duration: 500,
+            complete: function (anim) {
+                iceCreamPro.addEventListener('click', function () {
+                    descriptionToContent();
+                })
+               
+            }
+        });
 
 };
+
+var first = document.querySelector('.firstDescription');
+var second = document.querySelector('.secondDescription');
+var third = document.querySelector('.thirdDescription');
 
 var description = `
 <div class="descriptionContainer">
 <div class="dContainer">
-    <p>{{cream.firstDescription}}</p>
+    <p>` + first.innerHTML + `</p>
 </div>
 <div class="dContainer">
-    <p>{{cream.secondDescription}}</p>
+    <p>` + second.innerHTML + `</p>
 </div>
 <div class="dContainer">
-    <p>{{cream.thirdDescription}}</p>
+    <p>` + second.innerHTML + `</p>
 </div>
 
 
 </div>
 `;
 
+var titleTempo = document.querySelector('titleVacio');
+
 var title = `
 <div class="titleContainer">
 <span>Eres</span>
-<h1 class="title">{{cream.title}}</h1>
+<h1 class="title">` + titleTempo + `</h1>
 </div>
 
 `

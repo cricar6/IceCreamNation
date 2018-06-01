@@ -278,7 +278,7 @@ function postChargueCompleted() {
             translateX: "130vw",
             complete: function (anim) {
               question4Result = 4;
-              alert("terminado");
+
               finishTest();
             }
           });

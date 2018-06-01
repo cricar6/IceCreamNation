@@ -119,6 +119,7 @@ footer .info span b {
 }
 
 footer .logo {
+  max-width: 500px;
   width: 40%;
 }
 

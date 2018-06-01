@@ -811,7 +811,7 @@ setTimeout(chargueCompleted, 3000);
 
 var questions = [{
     questionTitle: "Describirías&nbsp;tu&nbsp;personalidad&nbsp;como:",
-    answers: ["Relajado", "Alégre"]
+    answers: ["Relajado", "Alegre"]
   },
 
   {
@@ -821,7 +821,7 @@ var questions = [{
 
   {
     questionTitle: "¿Cómo&nbsp;describirias&nbsp;tu&nbsp;estilo&nbsp;de&nbsp;vida?",
-    answers: ["Tranquilo", "Energético"]
+    answers: ["Tranquilo", "Enérgico"]
   },
 
   {

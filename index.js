@@ -25,8 +25,8 @@ MongoClient.connect("mongodb+srv://cluster0-wiwgu.mongodb.net/icecreamnation?ret
     db = client.db('icecreamnation');
 
     // Iniciar servidor
-    app.listen(process.env.PORT || 3000);
-    //app.listen(3000);
+    //app.listen(process.env.PORT || 3000);
+    app.listen(3000);
 });
 
 /*

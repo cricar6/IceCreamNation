@@ -1,0 +1,86 @@
+{
+    "icecreams": [
+        {
+            "name": "Chocolate Chocolate",
+            "direction": "chocolate-chocolate",
+            "description": "",
+            "image": "/imgs/ice_creams/chocolate-chocolate.png",
+            "price": 9000,
+            "flavor": "Chocolate",
+            "topping": "Chocolate",
+            "cono":"Vainilla"
+
+        },
+        {
+            "name": "Choco Vainilla",
+            "direction": "choco-vainilla",
+            "description": "",
+            "image": "/imgs/ice_creams/choco-vainilla.png",
+            "price": 7300,
+            "flavor": "Vainilla",
+            "topping": "Chocolate",
+            "cono":"Chocolate"
+        },
+        {
+            "name": "Choco Pistachio",
+            "direction": "choco-pistachio",
+            "description": 8600,
+            "image": "/imgs/ice_creams/choco-pistachio.png",
+            "price": "",
+            "flavor": "Chocolate",
+            "topping": "Pistachio",
+            "cono":"Chocolate"
+        },
+        {
+            "name": "Full Chocolate",
+            "direction": "full-chocolate",
+            "description": "",
+            "image": "/imgs/ice_creams/full-chocolate.png",
+            "price": 10000,
+            "flavor": "Chocolate",
+            "topping": "Chocolate",
+            "cono":"Chocolate"
+
+        },
+        {
+            "name": "Full fresa",
+            "direction": "full-strawberry",
+            "description": "",
+            "image": "/imgs/ice_creams/full-strawberry.png",
+            "price": 7000,
+            "flavor": "Fresa",
+            "topping": "Frutos rojos",
+            "cono":"Vainilla"
+        },
+        {
+            "name": "Chocolate Divertido",
+            "direction": "funny-chocolate",
+            "description": "",
+            "image": "/imgs/ice_creams/funny-chocolate.png",
+            "price": 6700,
+            "flavor": "Chocolate",
+            "topping": "M&M's",
+            "cono":"Vainilla"
+        },
+        {
+            "name": "Fresa Divertida",
+            "direction": "funny-strawberry",
+            "description": "",
+            "image": "/imgs/ice_creams/funny-strawberry.png",
+            "price": 6700,
+            "flavor": "Fresa",
+            "topping": "Dulces",
+            "cono":"Vainilla"
+        },
+        {
+            "name": "Vainilla Divertida",
+            "direction": "funny-vainilla",
+            "description": "",
+            "image": "/imgs/ice_creams/funny-vainilla.png",
+            "price": 6700,
+            "flavor": "Vainilla",
+            "topping": "Dulces",
+            "cono":"Vainilla"
+        }
+    ]
+}

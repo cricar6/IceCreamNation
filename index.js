@@ -13,7 +13,7 @@ app.set('view engine', 'hbs');
 
 app.use(express.static('public'));
 
-MongoClient.connect("mongodb+srv://cluster0-wiwgu.mongodb.net/icecreamnation?retryWrites=true",
+MongoClient.connect("mongodb+srv://icecreamnation-db-wiwgu.mongodb.net/icrecreamnation?retryWrites=true",
 {
     auth: {
         user: 'cricar',
@@ -22,11 +22,11 @@ MongoClient.connect("mongodb+srv://cluster0-wiwgu.mongodb.net/icecreamnation?ret
 }, function (err, client) {
     if (err) throw err;
 
-    db = client.db('icecreamnation');
+    db = client.db('icrecreamnation');
 
     // Iniciar servidor
-    //app.listen(process.env.PORT || 3000);
-    app.listen(3000);
+    app.listen(process.env.PORT || 3000);
+    //app.listen(3000);
 });
 
 /*
@@ -51,7 +51,7 @@ app.get('/tu_helado', (req, res) => {
 });
 
 app.get('/tu_helado/:direction', (req, res) => {
-    var ice_creams = db.collection('ice_creams')
+    var ice_creams = db.collection('ice-cream-characters')
         .find({
             direction: req.params.direction
         }).toArray((err, result) => {
@@ -63,38 +63,18 @@ app.get('/tu_helado/:direction', (req, res) => {
 
 
 app.get("/tienda", (req, res) => {
-
-
-
-
-    console.log("hola");
-    var cono = db.collection('products').find();
-    if (req.query.precio) {
-        console.log(req.query.precio);
-        cono.filter({
-            precio: {
-                $gte: parseFloat(req.query.precio[0]),
-                $lte: parseFloat(req.query.precio[1])
-            }
-        });
-    }
-    if (req.query.sabor)
-        cono.filter({
-            sabor: req.query.sabor
-        });
-
-    cono.toArray((err, result) => {
-        console.log(result);
+    console.log("Generando Tienda");
+    var iceCream = db.collection('ice-cream-shop').find();
+    iceCream.toArray((err, result) => {
+        //console.log(result);
         res.render('tienda', {
-            cono: result
+            iceCream: result,
+            
         })
     });
-
-
-
 });
 
-
+/*
 app.get("/tienda/cono/:nombre", (req, res) => {
     console.log("hola");
     db.collection('products').find({
@@ -107,3 +87,4 @@ app.get("/tienda/cono/:nombre", (req, res) => {
         });
     });
 });
+*/

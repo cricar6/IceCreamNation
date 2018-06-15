@@ -124,6 +124,7 @@ body {
                 justify-content: center;
                 //height: 50vh;
                 p {
+                    background: #fffdeb;
                     border: solid $black 6px;
                     font-weight: 600;
                     padding: 20px;
@@ -141,19 +142,34 @@ body {
 
 }
 
+
+@media screen and (max-width: 670px) {
+
+    .contentApp {
+        width: 200vw;
+        
+        .iceCreamContainer {
+            
+
+        }
+        .iceCreamDescription {
+
+        }
+    }
+}
 .buttonIniciarAgain button {
-    background: $pink;
+    background: white;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 80px;
+    height: 60px;
     font-size: 20px;
     border: transparent;
-    color: white;
+    color: $black;
     font-weight: 800;
     cursor: pointer;
-    padding-top: 10px;
-    padding-bottom: 40px;
+    text-transform: uppercase;
+
 }
 .vacio {
     display: none;

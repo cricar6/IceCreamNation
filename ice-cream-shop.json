@@ -3,7 +3,7 @@
         {
             "name": "Chocolate Chocolate",
             "direction": "chocolate-chocolate",
-            "description": "",
+            "description": "Cono de chocolate con adiciones de chocolate en cucurucho de vainilla. Mmmm chocolate",
             "image": "/imgs/ice_creams/chocolate-chocolate.png",
             "price": 9000,
             "flavor": "Chocolate",
@@ -14,7 +14,7 @@
         {
             "name": "Choco Vainilla",
             "direction": "choco-vainilla",
-            "description": "",
+            "description": "Cono de chocolate con crema de vainilla, con adiciones de oreo en forma de orejas y cucurucho de chocolate. Hahaha looks like the mouse",
             "image": "/imgs/ice_creams/choco-vainilla.png",
             "price": 7300,
             "flavor": "Vainilla",
@@ -24,9 +24,9 @@
         {
             "name": "Choco Pistachio",
             "direction": "choco-pistachio",
-            "description": 8600,
+            "description": "Cono de crema chocolate derretido con crema de pistachio hecha con nitrogeno líquida, y cucurucho de vainilla. Almost freezing.",
             "image": "/imgs/ice_creams/choco-pistachio.png",
-            "price": "",
+            "price": 8600,
             "flavor": "Chocolate",
             "topping": "Pistachio",
             "cono":"Chocolate"
@@ -34,7 +34,7 @@
         {
             "name": "Full Chocolate",
             "direction": "full-chocolate",
-            "description": "",
+            "description": "Cono de chocolate con crema de chocolate y adicion de chocolate y cucurucho chocolate. ¿Did i said chocolate?",
             "image": "/imgs/ice_creams/full-chocolate.png",
             "price": 10000,
             "flavor": "Chocolate",
@@ -45,7 +45,7 @@
         {
             "name": "Full fresa",
             "direction": "full-strawberry",
-            "description": "",
+            "description": "Cono de fresa con crema de frutos rojos y topping de M&M's y cerezas con cucurucho de vainilla. ¡Hey sweetie!",
             "image": "/imgs/ice_creams/full-strawberry.png",
             "price": 7000,
             "flavor": "Fresa",
@@ -55,7 +55,7 @@
         {
             "name": "Chocolate Divertido",
             "direction": "funny-chocolate",
-            "description": "",
+            "description": "Cono de chocolate con topping de M&M's y pretzels con cucurucho de vainilla. Mmmm ¡funny!",
             "image": "/imgs/ice_creams/funny-chocolate.png",
             "price": 6700,
             "flavor": "Chocolate",
@@ -65,7 +65,7 @@
         {
             "name": "Fresa Divertida",
             "direction": "funny-strawberry",
-            "description": "",
+            "description": "Cono especial de fresa con crema de fresa y topping de cereal con chocolate en cucurucho de vainilla. It's like a kid.",
             "image": "/imgs/ice_creams/funny-strawberry.png",
             "price": 6700,
             "flavor": "Fresa",
@@ -75,7 +75,7 @@
         {
             "name": "Vainilla Divertida",
             "direction": "funny-vainilla",
-            "description": "",
+            "description": "Cono de vainilla con crema de vainilla hecha con nitrogeno líquido y cereal de topping con cucurucho de vainilla. Funny like its brother.",
             "image": "/imgs/ice_creams/funny-vainilla.png",
             "price": 6700,
             "flavor": "Vainilla",

@@ -3,9 +3,11 @@ var contentApp = document.querySelector(".contentApp");
 
 var completeCharguedTime = false;
 
+var activateStartAnimation = true;
+
 function postChargueCompleted() {
 
-
+  activateStartAnimation = false;
   //MAS ADELANTE SE DICE QUE SE CAMBIARAN LAS VARIABLES; ESTO ES DESPUES DE QUE TERMINA LA ENTRADA
   function changeVariables(position) {
 
@@ -275,7 +277,7 @@ function postChargueCompleted() {
       document.querySelector("#answer2 .answerCard")
         .innerHTML = icon2;
 
-              //Voy a importar código de characteristics.js sobre el coloreo.
+      //Voy a importar código de characteristics.js sobre el coloreo.
 
 
 
@@ -362,7 +364,7 @@ function postChargueCompleted() {
         .innerHTML = icon3;
 
 
-              //Voy a importar código de characteristics.js sobre el coloreo.
+      //Voy a importar código de characteristics.js sobre el coloreo.
 
 
 
@@ -611,40 +613,40 @@ function postChargueCompleted() {
     document.querySelector("#answer2 .answerCard")
       .innerHTML = icon2;
 
-            //Voy a importar código de characteristics.js sobre el coloreo.
+    //Voy a importar código de characteristics.js sobre el coloreo.
 
 
 
-            var creamIcon2 = document.getElementById("creamIcon2");
-            var baseIcon2 = document.getElementById("baseIcon2")
-      
-            answer1.addEventListener("mouseover", function () {
-              //alert("funca");
-              creamIcon2.style.fill = "#B7DB66";
-              baseIcon2.style.fill = "#D8D8D8";
-            });
-            answer1.addEventListener("mouseout", function () {
-              creamIcon2.style.fill = "white";
-              baseIcon2.style.fill = "white";
-            });
-      
-            var iceStickIcon3 = document.getElementById("iceStickIcon3");
-            var iceCoverIcon3 = document.getElementById("iceCoverIcon3");
-      
-            answer2.addEventListener("mouseover", function () {
-              //alert("funca");
-              iceStickIcon3.style.fill = "#DDB25E";
-              iceCoverIcon3.style.fill = "#63AAAA";
-            });
-            answer2.addEventListener("mouseout", function () {
-              iceStickIcon3.style.fill = "white";
-              iceCoverIcon3.style.fill = "white";
-            });
-      
+    var creamIcon2 = document.getElementById("creamIcon2");
+    var baseIcon2 = document.getElementById("baseIcon2")
 
-      
-            //Termina codigo importado, repetir en otras respuestas
-      
+    answer1.addEventListener("mouseover", function () {
+      //alert("funca");
+      creamIcon2.style.fill = "#B7DB66";
+      baseIcon2.style.fill = "#D8D8D8";
+    });
+    answer1.addEventListener("mouseout", function () {
+      creamIcon2.style.fill = "white";
+      baseIcon2.style.fill = "white";
+    });
+
+    var iceStickIcon3 = document.getElementById("iceStickIcon3");
+    var iceCoverIcon3 = document.getElementById("iceCoverIcon3");
+
+    answer2.addEventListener("mouseover", function () {
+      //alert("funca");
+      iceStickIcon3.style.fill = "#DDB25E";
+      iceCoverIcon3.style.fill = "#63AAAA";
+    });
+    answer2.addEventListener("mouseout", function () {
+      iceStickIcon3.style.fill = "white";
+      iceCoverIcon3.style.fill = "white";
+    });
+
+
+
+    //Termina codigo importado, repetir en otras respuestas
+
 
     answer1.addEventListener("click", function () {
       var answersNotSelectedArray = [answer2];
@@ -866,84 +868,91 @@ function start() {
   var arrayEyes = [eye1, eye2];
 
   function postAnimationStart() {
+
+    //ESQUI
+
+
+
+
     imgTtl.addEventListener("click", function () {
-      var startTimeline = anime.timeline();
+      if (activateStartAnimation == true) {
+        var startTimeline = anime.timeline();
 
-      startTimeline
-        .add({
-          targets: sbTitle1,
-          opacity: 0,
-          easing: 'easeOutQuad',
-          duration: 400
-        })
+        startTimeline
+          .add({
+            targets: sbTitle1,
+            opacity: 0,
+            easing: 'easeOutQuad',
+            duration: 400
+          })
 
-        .add({
-          targets: titleStart,
-          translateX: "20",
-          easing: 'easeOutQuad',
-          duration: 200
+          .add({
+            targets: titleStart,
+            translateX: "20",
+            easing: 'easeOutQuad',
+            duration: 200
 
-        })
-        .add({
-          targets: titleStart,
-          translateX: "-120vw",
-          opacity: 1,
-          easing: 'easeOutQuad',
-          duration: 400
+          })
+          .add({
+            targets: titleStart,
+            translateX: "-120vw",
+            opacity: 1,
+            easing: 'easeOutQuad',
+            duration: 400
 
-        })
-        .add({
-          targets: sbTitle2,
-          opacity: 0,
-          easing: 'easeOutQuad',
-          duration: 400
-        })
+          })
+          .add({
+            targets: sbTitle2,
+            opacity: 0,
+            easing: 'easeOutQuad',
+            duration: 400
+          })
 
-        .add({
-          targets: arrayEyes,
-          translateX: -20,
-          easing: 'easeOutQuad',
-          duration: 400
-        })
-        .add({
-          targets: arrayEyes,
-          translateX: 20,
-          easing: 'easeOutQuad',
-          duration: 400
-        })
-        .add({
-          targets: arrayEyes,
-          translateX: 0,
-          easing: 'easeOutQuad',
-          duration: 400
-        })
-        .add({
-          targets: imgTtl,
-          translateX: "70vw",
-          opacity: 1,
-          easing: 'easeOutQuad',
-          duration: 400
-        })
-        .add({
-          targets: imgTtl,
-          translateX: "30vw",
-          opacity: 1,
-          easing: 'easeOutQuad',
-          delay: 1000,
-          duration: 400
-        })
-        .add({
-          targets: imgTtl,
-          translateX: "-70vw",
-          opacity: 1,
-          easing: 'easeOutQuad',
-          delay: 250,
-          duration: 400,
-          complete: function (anim) {
-            postChargueCompleted();
-          }
-        })
-
+          .add({
+            targets: arrayEyes,
+            translateX: -20,
+            easing: 'easeOutQuad',
+            duration: 400
+          })
+          .add({
+            targets: arrayEyes,
+            translateX: 20,
+            easing: 'easeOutQuad',
+            duration: 400
+          })
+          .add({
+            targets: arrayEyes,
+            translateX: 0,
+            easing: 'easeOutQuad',
+            duration: 400
+          })
+          .add({
+            targets: imgTtl,
+            translateX: "70vw",
+            opacity: 1,
+            easing: 'easeOutQuad',
+            duration: 400
+          })
+          .add({
+            targets: imgTtl,
+            translateX: "30vw",
+            opacity: 1,
+            easing: 'easeOutQuad',
+            delay: 1000,
+            duration: 400
+          })
+          .add({
+            targets: imgTtl,
+            translateX: "-70vw",
+            opacity: 1,
+            easing: 'easeOutQuad',
+            delay: 250,
+            duration: 400,
+            complete: function (anim) {
+              postChargueCompleted();
+            }
+          })
+      }
     });
   };
 

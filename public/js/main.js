@@ -3,32 +3,14 @@ openH = document.getElementById("openH");
 closeH = document.getElementById("closeH");
 navigator = document.getElementById("navegador");
 
-var y = window.matchMedia("(min-width: 671px)");
-myFunction(y); // Call listener function at run time
-y.addListener(myFunction2); // Attach listener function on state changes
-
-function myFunction2(y) {
-  if (x.matches) {
-    hamburger.style.display = "none";
-
-  }else {
-    hamburger.style.display = "block";
-
-  }
-};
-w = window;
-if (w.innerWidth>=671) {
-  hamburger.style.display = "none";
-
-
-} else {
-  hamburger.style.display = "block";
-
-}
-
-
 var open = false;
 var activable = true;
+
+
+
+var x = window.matchMedia("(min-width: 670px)");
+myFunction(x);
+x.addListener(myFunction);
 
 function myFunction(x) {
   if (x.matches) { // If media query matches
@@ -39,7 +21,7 @@ function myFunction(x) {
     $(document).ready(function () {
       $(window).on("scroll", function () {
         var wn = $(document).scrollTop();
-        console.log(wn);
+        //console.log(wn);
         if (wn > 300) {
           $(".nav").css("top", "0");
           $(".nav").css("bottom", "auto");
@@ -67,7 +49,7 @@ function myFunction(x) {
     $(document).ready(function () {
       $(window).on("scroll", function () {
         var wn = $(document).scrollTop();
-        console.log(wn);
+        //console.log(wn);
         if (!(wn > 300)) {
 
 
@@ -80,35 +62,9 @@ function myFunction(x) {
   }
 }
 
-var x = window.matchMedia("(min-width: 670px)");
-myFunction(x)
-x.addListener(myFunction)
-
-//var aparece = false;
-$(window).resize(function() {
-  if(aparece==false) {
-  document.getElementById('navegador').style.display="none";
-} else {
-  document.getElementById('navegador').style.display="flex";
-}
-});
-if(aparece==false) {
-  document.getElementById('navegador').style.display="none";
-} else {
-  document.getElementById('navegador').style.display="flex";
-}
-
-var aparece= false;
-
-
-
 
 hamburger.addEventListener("click", function () {
-  if(aparece==false) {
-    document.getElementById('navegador').style.display="none";
-  } else {
-    document.getElementById('navegador').style.display="flex";
-  }
+
   if (activable == true) {
     if (open == false) {
       //openH.style.display= "none";
@@ -237,3 +193,22 @@ hamburger.addEventListener("click", function () {
 
 });
 
+responsiveWindow();
+
+$(window).resize(function() {
+  responsiveWindow();
+});
+
+function responsiveWindow(){
+  if (window.innerWidth>=671) {
+    //alert("hi");
+    document.querySelector("header").style.marginTop="-40px";
+    document.getElementById('navegador').style.display = "flex";
+  } 
+  if (window.innerWidth<=671) {
+    //alert("hi");
+    document.querySelector("header").style.marginTop="0px";
+    document.getElementById('navegador').style.display = "none";
+  } 
+  
+}

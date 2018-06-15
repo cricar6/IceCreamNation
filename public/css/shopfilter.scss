@@ -1,0 +1,109 @@
+$mont: 'Montserrat',
+sans-serif;
+$pink: #FFAFB1;
+$green: #B7DB66;
+$blue: #3FCECA;
+$gray: #b6b8b8;
+$black: #22222C;
+$chocolate: #d2691e;
+$fresa: #fc5a8e;
+$vainilla: #f3e5ab;
+* {
+    padding: 0;
+    margin: 0;
+    font-family: $mont;
+}
+
+.filters {
+    
+    background: #eee;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .filterDescription {
+        color: #fff;
+        line-height: 20px;
+        padding-left: 20px;
+    }
+    .optionSelected {
+        cursor: pointer;
+        text-align: center;
+        font-family: $mont;
+        width: 200px;
+        line-height: 32px;
+        font-weight: bold;
+        color: #eee;
+        padding: 0 5px;
+        font-weight: 800;
+        font-style: italic;
+        font-size: 1.5em;
+        background: white;
+        border-radius: 15px;
+        padding: 10px;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        margin: 0 0 0 0;
+    }
+    .optionPrice {
+        display: flex;
+        flex-direction: column;
+        .priceFIlterContainer {
+            display: flex;
+            flex-direction: row;
+        }
+        .intermediate {
+            padding: 5px;
+            text-align: center;
+            font-family: $mont;
+            font-weight: bold;
+            color: #fff;
+            font-weight: 800;
+            font-style: italic;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            vertical-align: middle;
+        }
+        .priceMaxSelected,
+        .priceMinSelected {
+            width: 120px;
+        }
+    }
+    .optionsContainer {
+        ul {
+            display: none;
+            position: absolute;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 200px;
+            padding: 10px 5px 0;
+            li {
+                font-family: $mont;
+                display: inline-block;
+                padding: 8px 0;
+                line-height: 32px;
+                font-weight: bold;
+                color: #fff;
+                font-weight: 800;
+                font-style: italic;
+                font-size: 1em;
+                background: white;
+                border-radius: 30px;
+                padding: 5px;
+                margin: 10px;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: box-shadow .5s;
+                &:hover {
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+                }
+                a {
+                    text-decoration: none;
+                    padding: 0 20px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
